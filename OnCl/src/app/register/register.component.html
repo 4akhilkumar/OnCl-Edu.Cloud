@@ -1,0 +1,50 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column" style="background-image: url(../assets/images/register.webp); background-repeat: no-repeat; background-size: 100% 105%;">
+  <div style="padding: 40px;">
+    <div fxLayout="column" fxLayoutAlign="center" class="login-card">
+      <mat-card class="example-card">
+        <mat-toolbar class="title" color="primary">
+          Register
+        </mat-toolbar>
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+            <mat-icon>
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </mat-icon>
+            <mat-form-field class="example">
+              <mat-label>Name</mat-label>
+              <input matInput type="text"required minlength="3" onkeypress="return (event.charCode > 64 && 
+                    event.charCode < 91) || (event.charCode == 32) || (event.charCode > 96 && event.charCode < 123)" [formControl]="registerData.name" placeholder="Name" required>
+              <mat-error *ngIf="registerData.name.invalid">{{getMessageName()}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+            <mat-icon>
+              <span class="material-icons">email</span>
+            </mat-icon>
+            <mat-form-field class="example">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" pattern="[a-z0-9._%+-]+@[a-z]+\.[a-z]{2,}$" [formControl]="registerData.email" placeholder="Email" required>
+              <mat-error *ngIf="registerData.email.invalid">{{getMessageEmail()}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+            <mat-icon matSuffix>
+              <span class="material-icons">vpn_key</span>
+            </mat-icon>
+            <mat-form-field class="example">
+              <mat-label>Password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" pattern="(?=.*\d)(?=.*[!()@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}" [formControl]="registerData.password" placeholder="Password" required> 
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="registerData.password.invalid">{{getMessagePassword()}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center">
+          <button mat-raised-button (click)="registerUser()" [disabled]="registerData.name.invalid || registerData.email.invalid || registerData.password.invalid" class="example-button">Register</button>
+        </div>
+      <p class="agree1" style="cursor: pointer;outline:none" onclick="myFunction()" routerLink="/login">Already a Part in OnCl? Click here to Login</p><hr>
+    </mat-card>
+  </div>
+</div>
