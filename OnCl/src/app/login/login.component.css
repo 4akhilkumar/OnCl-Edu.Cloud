@@ -1,0 +1,52 @@
+.example-card {
+  width: 350px;
+  padding: 0;
+  margin: 0;
+  border-radius: 20px;
+}
+  
+.example{
+  width: 250px;
+  margin-top: 10px;
+}
+  
+.title{
+  font-family: "Cera Pro", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: white;
+  background-color: rgb(118, 233, 137);
+  justify-content: center;
+  text-transform: uppercase;
+  border-radius: 20px 20px 0px 0px;
+}
+  
+.example-button{
+  margin: 10px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  background-color: rgb(118, 233, 137);
+  justify-content: center;
+  width: auto;
+}
+  
+.example-form {
+  min-width: 250px;
+  max-width: 500px;
+  width: 100%;
+}
+  
+.example-full-width {
+  width: 100%;
+}
+  
+.agree {
+  text-align: center;
+  font-weight: bold;
+}
+  
+.text {
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
