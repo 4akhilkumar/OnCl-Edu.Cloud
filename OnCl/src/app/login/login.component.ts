@@ -3,6 +3,7 @@ import { Component, OnInit} from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
@@ -41,9 +42,12 @@ export class LoginComponent implements OnInit {
   constructor(private _auth: AuthService,
               public dialog: MatDialog,
               private _router: Router,
+              private titleService:Title,
               private snackbar:MatSnackBar) { }
   
+  title = 'Sign in - OnCl Account';
   ngOnInit(): void { 
+    this.titleService.setTitle(this.title);
   }
 
   loginUser () {
