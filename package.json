@@ -1,0 +1,33 @@
+{
+  "name": "oncl",
+  "version": "1.0.0",
+  "description": "Back-End for OnCl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4akhilkumar/OnCl-Edu.Cloud.git"
+  },
+  "author": "Akhil Kumar (@4akhilkumar)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4akhilkumar/OnCl-Edu.Cloud/issues"
+  },
+  "homepage": "https://github.com/4akhilkumar/OnCl-Edu.Cloud#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.3.1",
+    "ini": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.9",
+    "mquery": "^3.2.3",
+    "nodemon": "^2.0.6"
+  }
+}
