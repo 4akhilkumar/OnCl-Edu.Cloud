@@ -32,13 +32,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { SessionComponent } from './session/session.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    SessionComponent
+    SessionComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
