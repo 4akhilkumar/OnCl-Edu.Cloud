@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "OnCl"
+  "defaultProject": "OnCl",
+  "cli": {
+    "analytics": "aa20ce14-6b7d-4c55-9a13-80613493eb70"
+  }
 }
