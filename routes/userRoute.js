@@ -74,3 +74,14 @@ UserRoute.route('/username/:id').get((req,res,next)=>{
     .catch((err) => next(err));
 })
 
+UserRoute.route('/delete/:id').delete((req,res,next)=>{
+    User.deleteOne({_id:req.params.id})
+    .then((resp) => {
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).send("Removed Successfully")
+        res.json(resp);
+    }, (err) => next(err))
+    .catch((err) => next(err));
+})
+
+module.exports=UserRoute;
