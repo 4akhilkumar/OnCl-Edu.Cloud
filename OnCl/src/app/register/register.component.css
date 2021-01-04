@@ -2,7 +2,7 @@
     width: 350px;
     padding: 0;
     margin: 0; 
-    border-radius: 20px;
+    border-radius: 5px;
     }
   
   .example{
@@ -18,11 +18,12 @@
     background-color: rgb(238, 235, 87);
     justify-content: center;
     text-transform: uppercase;
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
   }
   
   .example-button{
-    margin: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-weight: bold;
     letter-spacing: 0.1em;
     background-color: rgb(238, 235, 87);
@@ -38,12 +39,6 @@
   
   .example-full-width {
     width: 100%;
-  }
-  
-  .jumbo {
-    padding: 18px 30px;
-    color: #fcfcfc;
-    min-height: 100px;
   }
   
   .agree {

@@ -3,27 +3,38 @@
     <div fxLayout="column" fxLayoutAlign="center" class="login-card">
       <mat-card class="example-card">
         <mat-toolbar class="title" color="primary">
-          Register
-        </mat-toolbar>
+          <span class="material-icons">admin_panel_settings</span>Register</mat-toolbar>
         <div fxLayout="column" fxLayoutAlign="center center">
           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
             <mat-icon>
               <i class="fa fa-user-circle" aria-hidden="true"></i>
             </mat-icon>
-            <mat-form-field class="example">
-              <mat-label>Name</mat-label>
+            <mat-form-field appearance="outline" class="example">
+              <mat-label>First Name</mat-label>
               <input matInput type="text"required minlength="3" onkeypress="return (event.charCode > 64 && 
-                    event.charCode < 91) || (event.charCode == 32) || (event.charCode > 96 && event.charCode < 123)" [formControl]="registerData.name" placeholder="Name" required>
-              <mat-error *ngIf="registerData.name.invalid">{{getMessageName()}}</mat-error>
+                    event.charCode < 91) || (event.charCode == 32) || (event.charCode > 96 && event.charCode < 123)" [formControl]="registerData.firstname" placeholder="First Name" required>
+              <mat-error *ngIf="registerData.firstname.invalid">{{getMessageFirstName()}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+            <mat-icon>
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+            </mat-icon>
+            <mat-form-field appearance="outline" class="example">
+              <mat-label>Last Name</mat-label>
+              <input matInput type="text"required minlength="3" onkeypress="return (event.charCode > 64 && 
+                    event.charCode < 91) || (event.charCode == 32) || (event.charCode > 96 && event.charCode < 123)" [formControl]="registerData.lastname" placeholder="Last Name" required>
+              <mat-error *ngIf="registerData.lastname.invalid">{{getMessageLastName()}}</mat-error>
             </mat-form-field>
           </div>
           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
             <mat-icon>
               <span class="material-icons">email</span>
             </mat-icon>
-            <mat-form-field class="example">
-              <mat-label>Email</mat-label>
-              <input matInput type="email" pattern="[a-z0-9._%+-]+@[a-z]+\.[a-z]{2,}$" [formControl]="registerData.email" placeholder="Email" required>
+            <mat-form-field appearance="outline" class="example">
+              <mat-label>E - Mail</mat-label>
+              <input matInput type="email" pattern="[a-z0-9._%+-]+@[a-z]+\.[a-z]{2,}$" [formControl]="registerData.email" placeholder="E - Mail" required>
+              <mat-hint>You can use letters, numbers & periods</mat-hint>
               <mat-error *ngIf="registerData.email.invalid">{{getMessageEmail()}}</mat-error>
             </mat-form-field>
           </div>
@@ -31,18 +42,19 @@
             <mat-icon matSuffix>
               <span class="material-icons">vpn_key</span>
             </mat-icon>
-            <mat-form-field class="example">
+            <mat-form-field appearance="outline" class="example">
               <mat-label>Password</mat-label>
               <input matInput [type]="hide ? 'password' : 'text'" pattern="(?=.*\d)(?=.*[!()@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}" [formControl]="registerData.password" placeholder="Password" required> 
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
+              <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
               <mat-error *ngIf="registerData.password.invalid">{{getMessagePassword()}}</mat-error>
             </mat-form-field>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="center">
-          <button mat-raised-button (click)="registerUser()" [disabled]="registerData.name.invalid || registerData.email.invalid || registerData.password.invalid" class="example-button">Register</button>
+          <button mat-raised-button (click)="registerUser()" [disabled]="registerData.firstname.invalid || registerData.lastname.invalid || registerData.email.invalid || registerData.password.invalid" class="example-button">Register</button>
         </div>
       <p class="agree1" style="cursor: pointer;outline:none" onclick="myFunction()" routerLink="/login">Already a Part in OnCl? Click here to Login</p><hr>
     </mat-card>

@@ -15,36 +15,48 @@ import { AuthService } from '../auth.service';
 export class RegisterComponent implements OnInit {
 
   hide=true;
-  registerUserData = { name: "", email: "", password: "" }
+  registerUserData = { firstname: "", lastname: "", email: "", password: "" }
   
   registerData={
-    name:new FormControl('',[Validators.required]),
+    firstname:new FormControl('',[Validators.required]),
+    lastname:new FormControl('',[Validators.required]),
     email:new FormControl('',[Validators.required,Validators.email]),
-    password:new FormControl('',[Validators.required,Validators.minLength(6)]),
+    password:new FormControl('',[Validators.required,Validators.minLength(8)]),
   }
  
-  getMessageName(){
-    if (this.registerData.name.hasError('required')) {
-      return 'Name is required';
+  getMessageFirstName() {
+    if (this.registerData.firstname.hasError('required')) {
+      return 'Enter First Name';
     }
-    else if(this.registerData.name.hasError('minlength')){
-      return 'Name must be a minimum length of 3';
+    else if(this.registerData.firstname.hasError('minlength')) {
+      return 'Are you sure you entered your name correctly?';
+    }
+  }
+  getMessageLastName() {
+    if (this.registerData.lastname.hasError('required')) {
+      return 'Enter Last Name';
+    }
+    else if(this.registerData.lastname.hasError('minlength')) {
+      return 'Are you sure you entered your name correctly?';
     }
   }
   getMessageEmail() {
     if (this.registerData.email.hasError('required')) {
-      return 'Email is required';
+      return 'Enter your E - Mail address';
     }
-    else if(this.registerData.email.hasError('email')){
+    else if(this.registerData.email.hasError('email')) {
       return 'Email must be a valid email Address';
     }
   }
-  getMessagePassword(){
+  getMessagePassword() {
     if (this.registerData.password.hasError('required')) {
-      return 'Password is required';
+      return 'Enter a password';
     }
-    else if(this.registerData.password.hasError('minlength')){
-      return 'Password must be a minimum length of 8 and should contain Upper & Lower Cases with Characters';
+    else if(this.registerData.password.hasError('minlength')) {
+      return 'Use 8 characters or more for your password';
+    }
+    else if(this.registerData.password.hasError('pattern')) {
+      return 'Please choose a stronger password. Try a mix of letters, numbers, and symbols.';
     }
   }
 
@@ -61,7 +73,8 @@ export class RegisterComponent implements OnInit {
 
   registerUser() {
     this.registerUserData.email=this.registerData.email.value;
-    this.registerUserData.name=this.registerData.name.value;
+    this.registerUserData.firstname=this.registerData.firstname.value;
+    this.registerUserData.lastname=this.registerData.lastname.value;
     this.registerUserData.password=this.registerData.password.value;
     this._auth.registerUser(this.registerUserData)
     .subscribe(
@@ -79,10 +92,12 @@ export class RegisterComponent implements OnInit {
               duration: 4000,
             });
             this.registerData.email.reset();
-            this.registerData.name.reset();
+            this.registerData.firstname.reset();
+            this.registerData.lastname.reset();
             this.registerData.password.reset();
             this.registerUserData.email="";
-            this.registerUserData.name="";
+            this.registerUserData.firstname="";
+            this.registerUserData.lastname="";
             this.registerUserData.password="";
           }
         }
