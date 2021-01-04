@@ -35,7 +35,7 @@ export class DeleteaccountComponent implements OnInit {
       this.auth.getUserId().subscribe((res)=> {
         this.auth.deleteaccount(res).subscribe(()=>{
           this.auth.logoutUser()
-          this._router.navigate(['/welcome'])
+          this._router.navigate(['/home'])
         })
       })
       alert('Your OnCl Account is Successfully Deleted\n\nAnd You No longer able to access to your Deleted Account.');
