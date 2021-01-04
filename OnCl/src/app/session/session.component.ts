@@ -15,7 +15,6 @@ import { Title } from '@angular/platform-browser';
 })
 export class SessionComponent implements OnInit {
 
-
   @ViewChild(MatAccordion) accordion: MatAccordion;
   title = 'Add Session(s) Info. | OnCl - Edu. Cloud';
   courses: string[] = [
