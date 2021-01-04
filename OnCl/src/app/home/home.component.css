@@ -1,0 +1,37 @@
+.title {
+    font-family: 'Satisfy', cursive !important;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .fewcards {
+    border-radius: 5px;
+    padding: 30px;
+    background: rgba(238, 53, 53, 0.8);
+    min-height: 100px;
+  }
+
+  .cards {
+    padding-right: 10% ;
+    padding-left: 10%;
+    padding-bottom: 6%;
+  }
+  
+  .example-card {
+    max-width: 359px;
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease-out; 
+  }
+  
+  .example-card:hover {
+    transform: translateY(-5px) scale(1.05) translateZ(0);
+  }
+  
+  .example-card:hover .overlay {
+    transform: scale(4) translateZ(0);
+  }
