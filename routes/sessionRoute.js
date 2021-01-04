@@ -13,3 +13,12 @@ SessionRoute.route("/:userid").get((req,res)=>{
     })
 })
 
+SessionRoute.route("/session/:id").get((req,res)=>{
+  session.findById(req.params.id,(err,emp)=>{
+        if (err) console.log(err);
+        else {
+        res.json(emp);
+        }
+  })
+})
+
