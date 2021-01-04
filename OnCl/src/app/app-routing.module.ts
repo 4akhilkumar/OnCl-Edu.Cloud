@@ -17,6 +17,7 @@ const routes: Routes = [
   {path:'session',component:SessionComponent},
   {path:'home',component:HomeComponent},
   {path:'welcome',component:WelcomeComponent},
+  {path:'sessions',component:SessionComponent,canActivate: [AuthGuard]},
   {path:'sessions-table-view',component:ViewComponent,canActivate: [AuthGuard]},
   {path:'sessions-card-view',component:SessionsCardViewComponent,canActivate: [AuthGuard]},
   {path:'edit/:id',component:EditComponent,canActivate: [AuthGuard]},
