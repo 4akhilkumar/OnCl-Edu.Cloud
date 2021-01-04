@@ -1,0 +1,76 @@
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over" class="side-nav">
+      <mat-list role="list" class="side-list">
+          <mat-list-item routerLink='/dashboard' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
+              <mat-icon mat-list-icon>
+                  <mat-icon class="example-tab-icon">dashboard</mat-icon>
+              </mat-icon>
+              <div mat-line>Dashboard</div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item routerLink='/welcome' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
+              <mat-icon mat-list-icon>
+                  <mat-icon class="example-tab-icon">home</mat-icon>
+              </mat-icon>
+              <div mat-line>Home</div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item routerLink='/contactus' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
+              <mat-icon mat-list-icon>
+                  <mat-icon class="example-tab-icon">contact_page</mat-icon>
+              </mat-icon>
+              <div mat-line>Contact Us</div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item routerLink='/aboutus' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
+              <mat-icon mat-list-icon>
+                  <i class="material-icons">groups</i>
+              </mat-icon>
+              <div mat-line>About Us</div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+      </mat-list>
+  </mat-drawer>
+  <mat-drawer-content fxLayout="column" fxFlexFill>
+    
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="background-color: rgb(241, 97, 92);height: 65px;color: white;padding-right: 5px;">
+      <div fxLayoutAlign="center center">
+          <button mat-icon-button (click)="drawer.toggle()" style="outline: none;"><span class="material-icons">menu</span></button>
+          <img src="../assets/images/icon/whin.ico" style="width:30px; height: 30px; margin-right: 5px;">
+          <span class="font-weight-bold" style="font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: large;"> OnCl - Edu. Cloud </span>
+      </div>
+      <div fxLayoutAlign="center center">
+        <button *ngIf="_authService.loggedIn()" mat-icon-button style="margin-right:20px; outline: none;" [matMenuTriggerFor]="more_options">
+            <img src="../assets/images/avatar.webp" style="width:40px; height: 40px; border-radius: 50%;">
+            <!-- <svg focusable="false" viewBox="0 0 24 24"><path style="fill: rgba(255,255,255, .87 );" d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg> -->
+        </button>
+        <mat-menu #more_options="matMenu">
+            <div style="padding-right: 5px; padding-left: 5px;">
+                <button mat-menu-item [matMenuTriggerFor]="two_options">My Account</button>
+                <button mat-menu-item [matMenuTriggerFor]="one_options">My Work</button>
+                <button mat-menu-item style="color: white; border-radius: 5px; background-color: black;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Log Out</button>
+            </div>
+        </mat-menu>
+        <mat-menu #two_options="matMenu">
+            <div style="padding-right: 5px; padding-left: 5px;">
+                <button mat-menu-item routerLink=''>My Profile</button>
+                <button mat-menu-item routerLink='/deleteaccount'>Manage Account</button>
+            </div>
+        </mat-menu>
+        <mat-menu #one_options="matMenu">
+            <div style="padding-right: 5px; padding-left: 5px;">
+                <button mat-menu-item routerLink='/sessions'>Add Session Info.</button>
+                <button mat-menu-item routerLink='/sessions-table-view'>View Session Info.</button>
+            </div>
+        </mat-menu>
+
+          <!-- <button style="outline: none;" *ngIf="_authService.loggedIn()" mat-raised-button style="margin-right:20px" routerLink='/deleteaccount' routerLinkActive='active4'><i class="material-icons">account_box</i></button> -->
+          <button style="outline: none;" *ngIf="!_authService.loggedIn()" mat-raised-button style="margin-right:20px" routerLink='/login' routerLinkActive='active2'><i class="material-icons">login</i>Login</button>
+      </div>
+  </div>   
+  <div fxFlex>
+      <router-outlet></router-outlet>
+  </div>
+      <!-- <app-footer></app-footer> -->
+  </mat-drawer-content>
+</mat-drawer-container>
