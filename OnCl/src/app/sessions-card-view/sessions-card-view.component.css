@@ -50,7 +50,7 @@ transform: scale(4) translateZ(0);
 
 .example-container {
   width: auto;
-  height: 1500px;
+  height: auto;
   margin: 10px;
   border: 2px solid rgb(0, 0, 0);
   border-radius: 5px
