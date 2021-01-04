@@ -1,0 +1,129 @@
+<div class="jumbo"
+    fxLayout="column"
+    fxLayout.sm="column" 
+    fxLayout.xs="column" 
+    fxLayoutAlign.xs="start center"
+    fxLayoutAlign.sm="start center" 
+    fxLayoutAlign.gt-sm="start center" 
+    fxLayoutGap="10px">
+  
+    <div fxFlex fxFlex.gt-sm="100%">
+      <h1 style="font-weight: bold;font-size: x-large; text-align: center; margin-top: 20px;">The Better Way to Find your Sessions...!</h1>
+      <p style="font-size: large; text-align: center;">
+        Type, Search & Learn. Here we provide you, The Semester Courses - recorded video sessions with detail info. i.e., by Topics covered 
+        in the session, Faculty who taught that session, when that session held and source link for the session. You can search by the 
+        Course Name, Topics, Date, Faculty Name.<br></p>     
+    </div>
+</div>
+
+<mat-button-toggle-group style="margin: 20px 20px;" #group="matButtonToggleGroup">
+  <mat-button-toggle style="color:white; background-color: black;" disabled>Cards View</mat-button-toggle>
+  <mat-button-toggle routerLink="/sessions-table-view" aria-label="Text align left">
+    <mat-icon>table_chart</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle routerLink="/sessions-card-view" aria-label="Text align center">
+    <mat-icon>view_agenda</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>
+
+<mat-drawer-container style="margin: 20px 20px;" class="example-container">
+  <mat-drawer style="width: 19%;" mode="side" opened>
+    <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 10px; font-weight: bold; font-size: x-large; text-align: center;">
+      <p>Filter</p>
+    </div>
+    <div style="padding-left: 4%; padding-right: 4%;">
+      <div class="example-action-buttons">
+        <button mat-raised-button style="background-color: black; color:white; margin-right: 5px; margin-top: 10px;" (click)="accordion.openAll()">Expand All</button>
+        <button mat-raised-button style="background-color: black; color:white; margin-top: 10px;" (click)="accordion.closeAll()">Collapse All</button>
+    </div>
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Course
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-icon style="color: rgb(118, 233, 137);">class</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <mat-label>Eg. Technical Skills</mat-label>
+          <input matInput matInput type="text" [(ngModel)]="coname" (input)="SearchCoName()">
+        </mat-form-field>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Topics
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-icon style="color: #F1615C;">topic</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <mat-label>Eg. XML</mat-label>
+          <input matInput matInput type="text" [(ngModel)]="cotopic" (input)="SearchTopic()">
+        </mat-form-field>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Faculty
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-icon style="color: #4285f4;">account_circle</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <mat-label>Eg. Faculty Name</mat-label>
+          <input matInput matInput type="text" [(ngModel)]="cofaculty" (input)="SearchFaculty()">
+        </mat-form-field>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Date
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-icon style="color: #fcc834;">today</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <mat-label>Eg. 2021-01-02</mat-label>
+          <input matInput matInput type="text" [(ngModel)]="codate" (input)="SearchDate()">
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+    </div>  
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div *ngIf="List">
+      <div >
+        <mat-grid-list [cols]="breakpoint" rowHeight="350px" (window:resize)="onResize($event)" >
+          <mat-grid-tile style="outline: none;" *ngFor="let f of List">
+            <div fxLayout="column" class="login-card">
+              <mat-card class="example-card">
+                <mat-toolbar class="title" color="primary">
+                  <span class="material-icons">class</span>{{f.coursename}}</mat-toolbar>
+                      <div style="margin: 10px;" fxLayout="column" fxLayoutAlign="space-evenly start">
+                        <div fxLayout="column" fxLayoutAlign="space-evenly start" fxLayoutGap="5px">
+                          <mat-card-subtitle><b>LTPS:</b> {{f.sessiontype}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Topics:</b> {{f.topicscovered}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>DOC:</b> {{f.doc}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Sharable Link:</b> {{f.url}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Faculty Name:</b> {{f.facultyname}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Faculty E-Mail:</b> {{f.facultyemail}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Held via:</b> {{f.platform}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Last Updated info.:</b> {{f.date}}</mat-card-subtitle>
+                        </div>
+                      </div>
+              </mat-card>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="OnPageChange($event)"></mat-paginator>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
