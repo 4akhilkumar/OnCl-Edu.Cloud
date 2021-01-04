@@ -35,20 +35,20 @@ export class SessionsCardViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle(this.title);
     this.fetchRecords();
   }
 
   fetchRecords(){
-    this.authService.getUserId().subscribe(
-      (res)=>{
-        this.sessionsService.getRecords(res).subscribe((data:any[])=>{
-          this.List=data;
-          this.breakpoint = (window.innerWidth <= 1000) ? 1 : 3;
-          this.sessions=this.List;
-          this.length=this.sessions.length
-          console.log(this.List)
-        });
+    this.authService.getUserId().subscribe((res)=>{
+      this.sessionsService.getRecords(res).subscribe((data:any[])=>{
+        this.List=data;
+        this.breakpoint = (window.innerWidth <= 1000) ? 1 : 3;
+        this.sessions=this.List;
+        this.length=this.sessions.length
+        console.log(this.List)
       });
+    });
   }
 
   OnPageChange(event: PageEvent){
