@@ -28,7 +28,7 @@ export class SessionsCardViewComponent implements OnInit {
   breakpoint: number = 3;
   length: number = 0;
   pageSize: number = 10; 
-  pageSizeOptions: number[] = [0,5,10];
+  pageSizeOptions: number[] = [10,20,30,40];
 
   constructor(private sessionsService:SessionsService, private authService:AuthService, private titleService:Title) { 
     this.fetchRecords();
@@ -43,7 +43,7 @@ export class SessionsCardViewComponent implements OnInit {
     this.authService.getUserId().subscribe((res)=>{
       this.sessionsService.getRecords(res).subscribe((data:any[])=>{
         this.List=data;
-        this.breakpoint = (window.innerWidth <= 1000) ? 1 : 3;
+        this.breakpoint = (window.innerWidth <= 800) ? 1 : 3;
         this.sessions=this.List;
         this.length=this.sessions.length
         console.log(this.List)
