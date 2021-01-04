@@ -48,7 +48,7 @@
         </mat-expansion-panel-header>
         <mat-form-field>
           <mat-label>Eg. Technical Skills</mat-label>
-          <input matInput type="text" [(ngModel)]="coname" (input)="SearchCoName()" #input>
+          <input matInput type="text" [(ngModel)]="coname" (input)="SearchCoName()" #input1>
         </mat-form-field>
       </mat-expansion-panel>
       <mat-expansion-panel>
@@ -62,7 +62,7 @@
         </mat-expansion-panel-header>
         <mat-form-field>
           <mat-label>Eg. XML</mat-label>
-          <input matInput type="text" [(ngModel)]="cotopic" (input)="SearchTopic()" #input>
+          <input matInput type="text" [(ngModel)]="cotopic" (input)="SearchTopic()" #input2>
         </mat-form-field>
       </mat-expansion-panel>
       <mat-expansion-panel>
@@ -76,7 +76,7 @@
         </mat-expansion-panel-header>
         <mat-form-field>
           <mat-label>Enter Faculty Name</mat-label>
-          <input matInput type="text" [(ngModel)]="cofaculty" (input)="SearchFaculty()" #input>
+          <input matInput type="text" [(ngModel)]="cofaculty" (input)="SearchFaculty()" #input3>
         </mat-form-field>
       </mat-expansion-panel>
       <mat-expansion-panel>
@@ -90,7 +90,7 @@
         </mat-expansion-panel-header>
         <mat-form-field>
           <mat-label>Eg. 2021-01-02</mat-label>
-          <input matInput type="text" [(ngModel)]="codate" (input)="SearchDate()" #input>
+          <input matInput type="text" [(ngModel)]="codate" (input)="SearchDate()" #input4>
         </mat-form-field>
       </mat-expansion-panel>
     </mat-accordion>
@@ -100,7 +100,7 @@
   <mat-drawer-content>
     <div *ngIf="List">
       <div *ngIf="length==0">
-        <h1 style="text-align: center; font-weight:500; text-transform: uppercase; padding-top: 10%;">No results found for "{{input.value}}"</h1>
+        <h1 style="text-align: center; font-weight:500; text-transform: uppercase; padding-top: 10%;">No results found for "{{input1.value || input2.value  || input3.value || input4.value}}"</h1>
       </div>
       <div >
         <mat-grid-list [cols]="breakpoint" rowHeight="350px" (window:resize)="onResize($event)" >
