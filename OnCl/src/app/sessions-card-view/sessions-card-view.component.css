@@ -1,0 +1,75 @@
+.example-card {
+  width: 350px;
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+  transition: 0.5s ease;
+}
+
+.example-card:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 5px 10px #383838;
+}
+
+.example{
+  width: 250px;
+  margin-top: 10px;
+}
+
+.jumbo {
+  margin: 20px 20px;
+  border-radius: 20px;
+  padding: 10px 10px;
+  background: #FAC4AD;
+  color: #000000;
+  min-height: 100px;
+  box-shadow: 5px 5px #888888;
+  overflow: hidden;
+  transition: all 0.3s ease-out; 
+}
+
+.title{
+  font-family: "Cera Pro", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: white;
+  background-color: rgb(118, 233, 137);
+  justify-content: center;
+  text-transform: uppercase;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.jumbo:hover {
+transform: translateY(-5px) scale(1.005) translateZ(0);
+box-shadow: 0 24px 36px rgba(0,0,0,0.11), 0 24px 46px var(--box-shadow-color);
+}
+
+.jumbo:hover .overlay {
+transform: scale(4) translateZ(0);
+}
+
+.example-container {
+  width: auto;
+  height: 1500px;
+  margin: 10px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px
+}
+
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
