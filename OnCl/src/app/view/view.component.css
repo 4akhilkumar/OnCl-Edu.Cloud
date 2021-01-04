@@ -15,7 +15,7 @@ th.mat-header-cell {
     background-color: rgba(0, 38, 255, 0.726);
 }
 
-.title{
+.title {
     font-family: "Cera Pro", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     font-weight: 700;
     font-size: 30px;
@@ -30,7 +30,7 @@ th.mat-header-cell {
     box-shadow: 5px 5px 10px #871A1A;
 }
 
-.view-all{
+.view-all {
     transition: 0.5s ease;
 }
 
@@ -38,7 +38,7 @@ th.mat-header-cell {
     margin: 15px 0;
   }
 
-  .jumbo {
+.jumbo {
     margin: 20px 20px;
     border-radius: 20px;
     padding: 10px 10px;
@@ -48,13 +48,13 @@ th.mat-header-cell {
     box-shadow: 5px 5px #888888;
     overflow: hidden;
     transition: all 0.3s ease-out; 
-  }
+}
   
-  .jumbo:hover {
-  transform: translateY(-5px) scale(1.005) translateZ(0);
-  box-shadow: 0 24px 36px rgba(0,0,0,0.11), 0 24px 46px var(--box-shadow-color);
-  }
+.jumbo:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+    box-shadow: 0 24px 36px rgba(0,0,0,0.11), 0 24px 46px var(--box-shadow-color);
+}
   
-  .jumbo:hover .overlay {
-  transform: scale(4) translateZ(0);
-  }
+.jumbo:hover .overlay {
+    transform: scale(4) translateZ(0);
+}
