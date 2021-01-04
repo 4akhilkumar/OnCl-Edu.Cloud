@@ -60,10 +60,10 @@ export class LoginComponent implements OnInit {
     .subscribe(
       res => {
         this.snackbar.open('Login Successfull', 'Okay!', {
-          duration: 4000,
+          duration: 2800,
         });
         localStorage.setItem('token', res.token)
-        this._router.navigate(['/welcome'])
+        this._router.navigate(['/home'])
       },
       err => {
         if( err instanceof HttpErrorResponse ) {
