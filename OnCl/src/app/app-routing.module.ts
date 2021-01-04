@@ -9,6 +9,7 @@ import { ViewComponent } from './view/view.component';
 import { ViewSessionComponent } from './view-session/view-session.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SessionsCardViewComponent } from './sessions-card-view/sessions-card-view.component';
+import { DeleteaccountComponent } from './deleteaccount/deleteaccount.component';
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'sessions-card-view',component:SessionsCardViewComponent,canActivate: [AuthGuard]},
   {path:'edit/:id',component:EditComponent,canActivate: [AuthGuard]},
   {path:'view/:id',component:ViewSessionComponent,canActivate: [AuthGuard]},
+  {path:'deleteaccount',component:DeleteaccountComponent,canActivate:[AuthGuard]},
 ];
 
 @NgModule({
