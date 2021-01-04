@@ -43,3 +43,27 @@ SessionRoute.route("/add").post((req, res) => {
       }
     })
 });
+
+SessionRoute.route("/edit/:id").patch((req, res) => {
+    session.findById(req.params.id,(err,data)=>{
+        if (err) console.log(err);
+        else {
+        data.userid=req.body.userid;
+        data.coursename=req.body.coursename;
+        data.sessiontype=req.body.sessiontype;
+        data.topicscovered=req.body.topicscovered;
+        data.doc=req.body.doc;
+        data.url=req.body.url;
+        data.facultyname=req.body.facultyname;
+        data.facultyemail=req.body.facultyemail;
+        data.platform=req.body.platform;
+        data
+          .save()
+          .then((data) => {
+            res.json("Edit Done");
+          })
+          .catch((err) => res.status(400).send("failed"));
+        }
+  });
+});
+
