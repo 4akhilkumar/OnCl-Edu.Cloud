@@ -22,3 +22,24 @@ SessionRoute.route("/session/:id").get((req,res)=>{
   })
 })
 
+SessionRoute.route("/add").post((req, res) => {
+    let emp = new session(req.body);
+    session.find({id:emp.id},(err,e)=>{
+      if(e.length!=0){
+        return res.status(409).send('Already session Exists');
+      }
+      else if(err){
+        console.log(err);
+      }
+      else{
+        emp
+          .save()
+          .then((data) => {
+            return res.status(200).json(data);
+          })
+          .catch((err) => {
+            return res.status(400).send("Failed to Create");
+          });
+      }
+    })
+});
