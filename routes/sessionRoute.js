@@ -67,4 +67,13 @@ SessionRoute.route("/edit/:id").patch((req, res) => {
   });
 });
 
+SessionRoute.route("/delete/:id").delete((req, res) => {
+    session.findByIdAndRemove({ _id: req.params.id }, (err, emp) => {
+      if (err) res.json(err);
+      else {
+        res.json("Removed Successfully");
+      }
+    });
+});
+
 module.exports=SessionRoute;
