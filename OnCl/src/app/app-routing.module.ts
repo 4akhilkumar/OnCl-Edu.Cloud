@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'edit/:id',component:EditComponent,canActivate: [AuthGuard]},
   {path:'view/:id',component:ViewSessionComponent,canActivate: [AuthGuard]},
   {path:'deleteaccount',component:DeleteaccountComponent,canActivate: [AuthGuard]},
-  {path:'',component:WelcomeComponent}
+  {path:'',component:HomeComponent}
 ];
 
 @NgModule({
