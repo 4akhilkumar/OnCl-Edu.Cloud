@@ -65,8 +65,26 @@
                 <button mat-menu-item routerLink='/sessions-table-view'>View Session Info.</button>
             </div>
         </mat-menu>
-
-          <!-- <button style="outline: none;" *ngIf="_authService.loggedIn()" mat-raised-button style="margin-right:20px" routerLink='/deleteaccount' routerLinkActive='active4'><i class="material-icons">account_box</i></button> -->
+        <mat-menu #OnClServices="matMenu">
+            <div fxLayout="column" fxLayoutAlign="center center" style="padding: 10px;" >
+                <div>
+                    <button mat-menu-item>
+                        <mat-icon>today</mat-icon>
+                        <span>Time Table</span>
+                    </button>
+                </div>
+            </div>
+            <div style="padding: 10px;" fxLayout="row" fxLayoutAlign="space-around center">
+                <button mat-menu-item>
+                    <mat-icon>class</mat-icon>
+                    <span>Sessions</span>
+                  </button>
+                  <button mat-menu-item>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Check voice mail</span>
+                  </button>
+            </div>
+          </mat-menu>
           <button style="outline: none;" *ngIf="!_authService.loggedIn()" mat-raised-button style="margin-right:20px" routerLink='/login' routerLinkActive='active2'><i class="material-icons">login</i>Login</button>
       </div>
   </div>   
