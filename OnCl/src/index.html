@@ -17,10 +17,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <style>
     #myBtn {
-      display: none;
       position: fixed;
-      bottom: 20px;
-      right: 15px;
+      bottom: 40px;
+      right: 40px;
       z-index: 99;
       font-size: 18px;
       border: none;
@@ -29,11 +28,9 @@
       cursor: pointer;
       padding: 15px;
       border-radius: 50%;
-      box-shadow: 0 0 8px  #000000;
+      box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 2px 6px 2px rgba(60,64,67,.15);
     }
-    html {
-      scroll-behavior: smooth;
-    }
+
   </style>
 </head>
 <body class="mat-typography">
@@ -43,7 +40,9 @@
 <script defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<button onclick="topFunction()" id="myBtn" title="Scroll to Top"><span class="material-icons">arrow_upward</span></button>
+
+<mat-button onclick="topFunction()" id="myBtn" title="Return to top"><span class="material-icons">arrow_upward</span></button>
+
 <script>
   var mybutton = document.getElementById("myBtn");
   window.onscroll = function() {scrollFunction()};
