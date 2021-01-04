@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent }from './home/home.component';
 import { SessionComponent } from './session/session.component';
 import { EditComponent } from './edit/edit.component';
+import { ViewSessionComponent } from './view-session/view-session.component';
 
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'session',component:SessionComponent},
   {path:'home',component:HomeComponent},
   {path:'edit/:id',component:EditComponent,canActivate: [AuthGuard]},
+  {path:'view/:id',component:ViewSessionComponent,canActivate: [AuthGuard]},
 ];
 
 @NgModule({
