@@ -1,0 +1,55 @@
+<div fxLayout.md="row" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="center" style="padding: 20px;" fxLayoutGap="10px">
+    <mat-card class="example-card">
+        <mat-card-content style="color: #202124; font-size: x-large; font-weight: 500;">
+            Delete your OnCl Account
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <h2 style="margin-top: 25px;">
+                Please read this carefully. It’s not the usual blah blah.
+            </h2>
+            <p>
+                You’re trying to delete your OnCl Account, which provides access to Education services.<br> 
+                You’ll no longer be able to use those services, & your account & specified data will be lost.
+            </p>
+            <mat-divider></mat-divider>
+            <h2 style="margin-top: 25px;">
+                All this content will be deleted
+            </h2>
+            <p>
+                <b>Note:</b> The information that belongs to you will be affected by your deletion, such as your <br>
+                profile information (if you given/edit your profile and also session(s) info.). <br>
+                <br>
+                Your data will be deleted completely. <b>Except your Education Information. Don't Worry all <br>
+                that Education Information will be encrypted, safe and securely stored with us.</b>
+            </p>
+            <mat-divider></mat-divider>
+            <p style="margin-top: 25px;">
+                If you have any pending work you can't resume doing it even though you create your <br>new account with same credentials.
+            </p>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group form-check" style="color: #202124; font-weight: 475;">
+                    <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                    <label for="acceptTerms" class="form-check-label">Yes, I acknowledge that I can't resume my work even though I create an new account <br>
+                        with same credentials, and I understand that if any Education info. I provided in the <br> OnCl - Edu. Cloud is false then it is totally my responsibility even after the account <br> deletion also.</label>
+                    <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Please acknowledge.</div>
+                </div>
+                <div class="form-group form-check" style="color: #202124; font-weight: 475;">
+                    <input type="checkbox" formControlName="acceptTerms2" id="acceptTerms2" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms2.errors }" />
+                    <label for="acceptTerms2" class="form-check-label">Yes, I want to permanently delete this OnCl Account and all its data.</label>
+                    <div *ngIf="submitted && f.acceptTerms2.errors" class="invalid-feedback">Please confirm that you wish to delete this OnCl Account.</div>
+                </div>
+                <div>
+                    <button mat-raised-button style="margin-left: 5px; color: tomato;">
+                        <span class="material-icons">delete</span>
+                        <span>DELETE ACCOUNT</span>
+                    </button> 
+                    <button mat-button type="reset" (click)="onReset()" routerLink="/welcome" style="margin-left: 30px; color: #4285f4">
+                        <span class="material-icons">cancel</span>
+                        <span>CANCEL</span>
+                    </button> 
+                </div>
+            </form>
+        </mat-card-content>
+        </mat-card>
+</div>

@@ -47,4 +47,8 @@ export class AuthService {
     getUserName(id){
       return this.http.get(`${this.url}/user/username/${id}`)
     }
+
+    deleteaccount(id){
+      return this.http.delete<any>(`${this.url}/user/delete/${id}`)
+    }
 }
