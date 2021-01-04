@@ -67,3 +67,4 @@ SessionRoute.route("/edit/:id").patch((req, res) => {
   });
 });
 
+module.exports=SessionRoute;
