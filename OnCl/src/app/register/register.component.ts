@@ -83,7 +83,7 @@ export class RegisterComponent implements OnInit {
           duration: 4000,
         });
         localStorage.setItem('token', res.token)
-        this._router.navigate(['/welcome'])
+        this._router.navigate(['/home'])
       },
       err => {
         if( err instanceof HttpErrorResponse ) {
