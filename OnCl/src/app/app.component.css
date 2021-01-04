@@ -17,33 +17,9 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.active1 {
-    color: white;
-    background: linear-gradient(to top left, #ffff66 0%, #ff0066 100%);
-}
-
 .active2 {
     color: white;
     background-color: rgb(118, 233, 137);
-}
-
-
-.footer {
-    background-color: #871A1A;
-    margin: 0px auto;
-    padding: 20px;
-    color: white;
-}
-
-.footer-title{
-    background-color: #252525;
-    margin: 0px auto;
-    padding: 10px;
-    color: white;
-}
-
-.row-content{
-    padding: 20px;
 }
 
 .side-list{
@@ -56,8 +32,4 @@
 .active {
     color: black;
     background-color:rgb(250, 250, 250);
-}
-
-.address{
-    padding: 0px 16px;
 }
