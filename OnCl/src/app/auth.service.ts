@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 export class AuthService {
 
   url='http://localhost:4000';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _router:Router,) { }
 
     invokeAppComponent=new EventEmitter();
     subsVar:Subscription;
@@ -24,6 +24,7 @@ export class AuthService {
   
     logoutUser() {
       localStorage.removeItem('token')
+      this._router.navigate(['/login']);
     }
   
     onLogin(){
