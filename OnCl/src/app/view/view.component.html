@@ -32,13 +32,13 @@
       <mat-icon matSuffix>
         <i class="fa fa-search"></i>
       </mat-icon>
-      <input matInput placeholder="Search by Course Name..." matInput type="text" [(ngModel)]="coname" (input)="Search()">
+      <input matInput placeholder="Search by Course Name" matInput type="text" [(ngModel)]="coname" (input)="Search()" #input>
     </mat-form-field>
   </div>
 </div>
 <div *ngIf="sessions" style="margin-bottom: 50px;">
   <div *ngIf="length==0">
-    <h1 style="text-align: center;font-weight:500;text-transform: uppercase;">No sessions Found</h1>
+    <h1 style="text-align: center;font-weight:500;text-transform: uppercase;">No results found for "{{input.value}}"</h1>
   </div>
   <div *ngIf="length!=0" fxLayoutAlign="center">
     <table mat-table  [dataSource]="sessions" matSort class="mat-elevation-z8">
