@@ -20,3 +20,26 @@ function verifyToken(req, res, next) {
     })
 }
 
+UserRoute.route('/register').post((req, res) => {
+    let user = new User({
+      firstname : req.body.firstname,
+      lastname : req.body.lastname,
+      email : req.body.email,
+      password : bcrypt.hashSync(req.body.password, 10)
+    })
+    User.findOne({email:req.body.email},(error,u)=>{
+        if(u)
+        return res.status(409).send('E - Mail Already Exists');
+        else{
+            user.save((error, registeredUser) => {
+                if (error) {
+                    console.log("Error While Registering User To Database...!\n" + error)
+                } else {
+                    let token =  jwt.sign({id:registeredUser._id}, secret)
+                    res.status(200).send({token})
+                }
+            })
+        }
+    })  
+})
+
