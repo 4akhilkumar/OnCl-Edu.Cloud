@@ -1,15 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { AuthService } from './auth.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
 
+  horizontalPosition: MatSnackBarHorizontalPosition = 'right';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+
   constructor(private _authService: AuthService,
-    private _router: Router,private snackbar:MatSnackBar) { }
+              private _router: Router,
+              private snackbar:MatSnackBar) { }
   
   canActivate(): boolean {
     if (this._authService.loggedIn()) {
@@ -19,7 +23,9 @@ export class AuthGuard implements CanActivate {
       console.log('false')            
       this._router.navigate(['/login'])
       this.snackbar.open('Please Login','Okay!',{
-        duration: 4000,
+        duration: 2800,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
       });
       return false
     }
