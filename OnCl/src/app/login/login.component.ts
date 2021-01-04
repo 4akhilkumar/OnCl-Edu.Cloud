@@ -23,18 +23,21 @@ export class LoginComponent implements OnInit {
 
   getMessageEmail() {
     if (this.loginUserData.email.hasError('required')) {
-      return 'Email is required';
+      return 'Enter your E - Mail address';
     }
-    else if(this.loginUserData.email.hasError('email')){
-      return 'Email must be a valid email Address';
+    else if(this.loginUserData.email.hasError('email')) {
+      return 'Invalid E - Mail address';
     }
   }
-  getMessagePassword(){
+  getMessagePassword() {
     if (this.loginUserData.password.hasError('required')) {
-      return 'Password is required';
+      return 'Enter your password';
     }
-    else if(this.loginUserData.password.hasError('minlength')){
-      return 'Password must be a minimum length of 8 and should contain Upper & Lower Cases with Characters';
+    else if(this.loginUserData.password.hasError('minlength')) {
+      return 'Use your 8 characters or more of your password';
+    }
+    else if(this.loginUserData.password.hasError('pattern')) {
+      return 'Please enter your stronger password. which is a mix of letters, numbers, and symbols.';
     }
   }
 

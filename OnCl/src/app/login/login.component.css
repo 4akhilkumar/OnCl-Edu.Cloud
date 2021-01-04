@@ -2,7 +2,7 @@
   width: 350px;
   padding: 0;
   margin: 0;
-  border-radius: 20px;
+  border-radius: 5px;
 }
   
 .example{
@@ -18,7 +18,7 @@
   background-color: rgb(118, 233, 137);
   justify-content: center;
   text-transform: uppercase;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
 }
   
 .example-button{
@@ -28,16 +28,6 @@
   background-color: rgb(118, 233, 137);
   justify-content: center;
   width: auto;
-}
-  
-.example-form {
-  min-width: 250px;
-  max-width: 500px;
-  width: 100%;
-}
-  
-.example-full-width {
-  width: 100%;
 }
   
 .agree {
