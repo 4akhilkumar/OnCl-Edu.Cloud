@@ -33,6 +33,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 
 import { RegisterComponent } from './register/register.component';
@@ -99,6 +100,7 @@ import { SessionsCardViewComponent } from './sessions-card-view/sessions-card-vi
     MatButtonToggleModule,
     MatPaginatorModule,
     MatAutocompleteModule,
+    MatProgressBarModule,
     ClipboardModule
   ],
   providers: [
