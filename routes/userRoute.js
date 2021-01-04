@@ -63,3 +63,14 @@ UserRoute.route('/login').post((req, res) => {
 UserRoute.route('/userid').get(verifyToken,(req,res,next)=>{
     return res.status(200).json(decodedToken.id)
 })
+
+UserRoute.route('/username/:id').get((req,res,next)=>{
+    User.findOne({_id:req.params.id})
+    .then((resp) => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(resp.firstname);
+    }, (err) => next(err))
+    .catch((err) => next(err));
+})
+
