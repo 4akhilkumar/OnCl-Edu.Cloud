@@ -43,3 +43,23 @@ UserRoute.route('/register').post((req, res) => {
     })  
 })
 
+UserRoute.route('/login').post((req, res) => { 
+    User.findOne({email: req.body.email}, (error, u) => {
+        if (error) {
+            console.log( error)
+        } else {
+           if (!u) {
+              res.status(401).send("Invalid E - Mail...!")
+           } else if (bcrypt.compareSync(req.body.password, u.password)){
+              let token =  jwt.sign({id:u._id}, secret) 
+              res.status(200).send({token})  
+           } else {
+              res.status(401).send("Invalid Password...!")
+           }
+        }
+    })
+})
+
+UserRoute.route('/userid').get(verifyToken,(req,res,next)=>{
+    return res.status(200).json(decodedToken.id)
+})
