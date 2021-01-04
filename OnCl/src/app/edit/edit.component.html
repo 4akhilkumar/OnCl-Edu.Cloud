@@ -15,7 +15,7 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
       
-          <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column" >
+          <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column">
           <mat-form-field>
             <mat-label>Course Name</mat-label>
             <mat-select [formControl]="formData.coursename">
@@ -42,8 +42,7 @@
               <mat-error *ngIf="formData.topicscovered.invalid">{{getErrorTopics()}}</mat-error>
           </mat-form-field>
 
-          <!-- <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column" > -->
-            <mat-form-field>
+          <mat-form-field>
                 <mat-label>Date of conduction</mat-label>
                 <input matInput type="datetime-local" [formControl]="formData.doc" placeholder="Date of conduction" required>
                 <mat-error *ngIf="formData.doc.invalid">{{getErrorDOC()}}</mat-error>
@@ -63,11 +62,12 @@
                 Faculty Details
               </mat-panel-title>
               <mat-panel-description>
-                Type the faulty name and required details who involved in this session
+                Type the faculty name and required details who involved in this session
                 <mat-icon style="color: #4285f4;">account_circle</mat-icon>
               </mat-panel-description>
             </mat-expansion-panel-header>
         
+            <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column">
             <mat-form-field>
               <mat-label>Faculty Name</mat-label>
               <input matInput type="text" [formControl]="formData.facultyname" placeholder="Faculty Name" required>
@@ -79,12 +79,13 @@
               <input matInput type="email" [formControl]="formData.facultyemail" placeholder="Faculty E - Mail" required>
               <mat-error *ngIf="formData.facultyemail.invalid">{{getErrorFacultyEMail()}}</mat-error>
             </mat-form-field>
+          </div>
         
           </mat-expansion-panel>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-              Platform
             <mat-panel-title style="color: #F1615C; letter-spacing: 0.1em; font-weight: 550;">
+              Platform Details
             </mat-panel-title>
             <mat-panel-description>
               Type the platform name on which the session held
