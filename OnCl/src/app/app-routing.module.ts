@@ -10,8 +10,10 @@ import { ViewSessionComponent } from './view-session/view-session.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SessionsCardViewComponent } from './sessions-card-view/sessions-card-view.component';
 import { DeleteaccountComponent } from './deleteaccount/deleteaccount.component';
+import { TestingComponent } from './testing/testing.component';
 
 const routes: Routes = [
+  {path:'testing',component:TestingComponent},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'session',component:SessionComponent},
