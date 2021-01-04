@@ -14,9 +14,12 @@ mongoose
 })
 .then(() => console.log("Connected to MongoDB, Successfully."));
 
+const SessionRoute=require('./routes/sessionRoute');
 const UserRoute=require('./routes/userRoute');
+
 app.use(cors());
 app.use(bodyparser.json());  
+app.use("/sessions", SessionRoute);
 app.use('/user',UserRoute);
 
 app.listen(port, () => console.log("Running on port " + port));
