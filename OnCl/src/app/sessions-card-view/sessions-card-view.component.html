@@ -17,7 +17,7 @@
 </div>
 
 <mat-button-toggle-group style="margin: 20px 20px;" #group="matButtonToggleGroup">
-  <mat-button-toggle style="color:white; background-color: black;" disabled>Cards View</mat-button-toggle>
+  <mat-button-toggle style="color: white; background-color: black;" disabled>Cards View</mat-button-toggle>
   <mat-button-toggle routerLink="/sessions-table-view" aria-label="Text align left">
     <mat-icon>table_chart</mat-icon>
   </mat-button-toggle>
@@ -26,7 +26,11 @@
   </mat-button-toggle>
 </mat-button-toggle-group>
 
-<mat-drawer-container style="margin: 20px 20px;" class="example-container">
+<div style="padding-left: 20px; padding-right: 20px;">
+  <mat-progress-bar *ngIf="!List" color = "warn" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<mat-drawer-container style="margin: 1px 20px 20px 20px;" class="example-container">
   <mat-drawer style="width: 19%;" mode="side" opened>
     <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 10px; font-weight: bold; font-size: x-large; text-align: center;">
       <p>Filter</p>
@@ -35,65 +39,65 @@
       <div class="example-action-buttons">
         <button mat-raised-button style="background-color: black; color:white; margin-right: 5px; margin-top: 10px;" (click)="accordion.openAll()">Expand All</button>
         <button mat-raised-button style="background-color: black; color:white; margin-top: 10px;" (click)="accordion.closeAll()">Collapse All</button>
-    </div>
-    <mat-accordion class="example-headers-align" multi>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Course
-          </mat-panel-title>
-          <mat-panel-description>
-            <mat-icon style="color: rgb(118, 233, 137);">class</mat-icon>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-form-field>
-          <mat-label>Eg. Technical Skills</mat-label>
-          <input matInput type="text" [(ngModel)]="coname" (input)="SearchCoName()" #input1>
-        </mat-form-field>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Topics
-          </mat-panel-title>
-          <mat-panel-description>
-            <mat-icon style="color: #F1615C;">topic</mat-icon>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-form-field>
-          <mat-label>Eg. XML</mat-label>
-          <input matInput type="text" [(ngModel)]="cotopic" (input)="SearchTopic()" #input2>
-        </mat-form-field>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Faculty
-          </mat-panel-title>
-          <mat-panel-description>
-            <mat-icon style="color: #4285f4;">account_circle</mat-icon>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-form-field>
-          <mat-label>Enter Faculty Name</mat-label>
-          <input matInput type="text" [(ngModel)]="cofaculty" (input)="SearchFaculty()" #input3>
-        </mat-form-field>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Date
-          </mat-panel-title>
-          <mat-panel-description>
-            <mat-icon style="color: #fcc834;">today</mat-icon>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-form-field>
-          <mat-label>Eg. 2021-01-02</mat-label>
-          <input matInput type="text" [(ngModel)]="codate" (input)="SearchDate()" #input4>
-        </mat-form-field>
-      </mat-expansion-panel>
-    </mat-accordion>
+      </div>
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Course
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon style="color: rgb(118, 233, 137);">class</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field>
+            <mat-label>Eg. Technical Skills</mat-label>
+            <input matInput type="text" [(ngModel)]="coname" (input)="SearchCoName()" #input1>
+          </mat-form-field>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Topics
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon style="color: #F1615C;">topic</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field>
+            <mat-label>Eg. XML</mat-label>
+            <input matInput type="text" [(ngModel)]="cotopic" (input)="SearchTopic()" #input2>
+          </mat-form-field>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Faculty
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon style="color: #4285f4;">account_circle</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field>
+            <mat-label>Enter Faculty Name</mat-label>
+            <input matInput type="text" [(ngModel)]="cofaculty" (input)="SearchFaculty()" #input3>
+          </mat-form-field>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Date
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon style="color: #fcc834;">today</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field>
+            <mat-label>Eg. 2021-01-02</mat-label>
+            <input matInput type="text" [(ngModel)]="codate" (input)="SearchDate()" #input4>
+          </mat-form-field>
+        </mat-expansion-panel>
+      </mat-accordion>
     </div>  
   </mat-drawer>
 
