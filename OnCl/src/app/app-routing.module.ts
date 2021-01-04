@@ -16,15 +16,15 @@ const routes: Routes = [
   {path:'testing',component:TestingComponent},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
-  {path:'session',component:SessionComponent},
   {path:'home',component:HomeComponent},
   {path:'welcome',component:WelcomeComponent},
-  {path:'sessions',component:SessionComponent,canActivate: [AuthGuard]},
-  {path:'sessions-table-view',component:ViewComponent,canActivate: [AuthGuard]},
-  {path:'sessions-card-view',component:SessionsCardViewComponent,canActivate: [AuthGuard]},
-  {path:'edit/:id',component:EditComponent,canActivate: [AuthGuard]},
-  {path:'view/:id',component:ViewSessionComponent,canActivate: [AuthGuard]},
-  {path:'deleteaccount',component:DeleteaccountComponent,canActivate:[AuthGuard]},
+  {path:'sessions',component:SessionComponent},
+  {path:'sessions-table-view',component:ViewComponent},
+  {path:'sessions-card-view',component:SessionsCardViewComponent},
+  {path:'edit/:id',component:EditComponent},
+  {path:'view/:id',component:ViewSessionComponent},
+  {path:'deleteaccount',component:DeleteaccountComponent},
+  {path:'',component:WelcomeComponent}
 ];
 
 @NgModule({
