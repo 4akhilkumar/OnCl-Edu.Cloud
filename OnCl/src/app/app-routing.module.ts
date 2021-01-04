@@ -11,6 +11,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SessionsCardViewComponent } from './sessions-card-view/sessions-card-view.component';
 import { DeleteaccountComponent } from './deleteaccount/deleteaccount.component';
 import { TestingComponent } from './testing/testing.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path:'testing',component:TestingComponent},
@@ -18,12 +19,12 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'home',component:HomeComponent},
   {path:'welcome',component:WelcomeComponent},
-  {path:'sessions',component:SessionComponent},
-  {path:'sessions-table-view',component:ViewComponent},
-  {path:'sessions-card-view',component:SessionsCardViewComponent},
-  {path:'edit/:id',component:EditComponent},
-  {path:'view/:id',component:ViewSessionComponent},
-  {path:'deleteaccount',component:DeleteaccountComponent},
+  {path:'sessions',component:SessionComponent,canActivate: [AuthGuard]},
+  {path:'sessions-table-view',component:ViewComponent,canActivate: [AuthGuard]},
+  {path:'sessions-card-view',component:SessionsCardViewComponent,canActivate: [AuthGuard]},
+  {path:'edit/:id',component:EditComponent,canActivate: [AuthGuard]},
+  {path:'view/:id',component:ViewSessionComponent,canActivate: [AuthGuard]},
+  {path:'deleteaccount',component:DeleteaccountComponent,canActivate: [AuthGuard]},
   {path:'',component:WelcomeComponent}
 ];
 
