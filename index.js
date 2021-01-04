@@ -4,6 +4,16 @@ const mongoose=require('mongoose');
 const bodyparser=require("body-parser");
 const port=4000;
 const app = express();
+
+mongoose
+.connect("mongodb+srv://Database4WhiN:Database4WhiN@whin.wbc8o.mongodb.net/WhiN?retryWrites=true&w=majority", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("Connected to MongoDB, Successfully."));
+
 app.use(cors());
 app.use(bodyparser.json());  
 
