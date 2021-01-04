@@ -15,6 +15,7 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
       
+          <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column" >
           <mat-form-field>
             <mat-label>Course Name</mat-label>
             <mat-select [formControl]="formData.coursename">
@@ -32,13 +33,16 @@
             </mat-select>
             <mat-error *ngIf="formData.sessiontype.invalid">{{getErrorSessionType()}}</mat-error>
           </mat-form-field>
+        </div>
       
+        <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column" >
           <mat-form-field>
             <mat-label>Topics Covered</mat-label>
               <input matInput type="text" [formControl]="formData.topicscovered" placeholder="Topics" required>
               <mat-error *ngIf="formData.topicscovered.invalid">{{getErrorTopics()}}</mat-error>
           </mat-form-field>
 
+          <!-- <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column" > -->
             <mat-form-field>
                 <mat-label>Date of conduction</mat-label>
                 <input matInput type="datetime-local" [formControl]="formData.doc" placeholder="Date of conduction" required>
@@ -99,5 +103,7 @@
         </mat-expansion-panel>
       </mat-accordion>
       <div fxLayout="row" fxLayoutAlign="end end" style="padding-top: 10px;">
+        <button mat-raised-button style="margin: 10px 0px 10px 10px;" routerLink="/sessions-table-view">Return</button>
+        <button mat-raised-button class="example-button" (click)="onSubmit()" [disabled]="formData.coursename.invalid || formData.sessiontype.invalid || formData.topicscovered.invalid || formData.doc.invalid || formData.url.invalid || formData.facultyname.invalid || formData.facultyemail.invalid || formData.platform.invalid">Modify</button>
     </div>
 </div>
