@@ -2,7 +2,6 @@ const express=require('express');
 const cors = require("cors");
 const mongoose=require('mongoose');
 const bodyparser=require("body-parser");
-const port=4000;
 const app = express();
 const compression=require('compression');
 const dotenv=require('dotenv');
