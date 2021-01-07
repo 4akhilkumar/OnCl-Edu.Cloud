@@ -24,7 +24,7 @@ const SessionRoute=require('./routes/sessionRoute');
 const UserRoute=require('./routes/userRoute');
 
 app.use(compression());
-app.use(express.static(process.cwd() + "/oncl/dist/oncl"));
+app.use(express.static(process.cwd() + "/OnCl/dist/OnCl"));
 app.use(
     helmet.contentSecurityPolicy({
       directives: {
