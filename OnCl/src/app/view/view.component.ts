@@ -3,7 +3,7 @@ import { SessionsService } from '../sessions.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { Title } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser'; 
 
 @Component({
   selector: 'app-view',
