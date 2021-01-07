@@ -14,10 +14,12 @@ import { TimetableComponent } from './timetable/timetable.component';
 import { EdittimetableComponent } from './edittimetable/edittimetable.component';
 import { TimetableTableViewComponent } from './timetable-table-view/timetable-table-view.component';
 import { TestingComponent } from './testing/testing.component';
+import { Testing2Component } from './testing2/testing2.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path:'testing',component:TestingComponent},
+  {path:'testing2',component:Testing2Component},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'home',component:HomeComponent},
