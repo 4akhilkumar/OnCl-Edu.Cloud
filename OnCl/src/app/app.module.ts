@@ -44,11 +44,14 @@ import { ViewComponent } from './view/view.component';
 import { ViewSessionComponent } from './view-session/view-session.component';
 import { HomeComponent } from './home/home.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { SemestersComponent } from './semesters/semesters.component';
 import { FooterComponent } from './footer/footer.component';
 import { TestingComponent } from './testing/testing.component';
 import { DeleteaccountComponent } from './deleteaccount/deleteaccount.component';
 import { SessionsCardViewComponent } from './sessions-card-view/sessions-card-view.component';
+import { Testing2Component } from './testing2/testing2.component';
+import { TimetableComponent } from './timetable/timetable.component';
+import { EdittimetableComponent } from './edittimetable/edittimetable.component';
+import { TimetableTableViewComponent } from './timetable-table-view/timetable-table-view.component';
 
 @NgModule({
   declarations: [
@@ -61,11 +64,14 @@ import { SessionsCardViewComponent } from './sessions-card-view/sessions-card-vi
     ViewSessionComponent,
     HomeComponent,
     WelcomeComponent,
-    SemestersComponent,
     FooterComponent,
     TestingComponent,
     DeleteaccountComponent,
     SessionsCardViewComponent,
+    Testing2Component,
+    TimetableComponent,
+    EdittimetableComponent,
+    TimetableTableViewComponent,
   ],
   imports: [
     BrowserModule,
