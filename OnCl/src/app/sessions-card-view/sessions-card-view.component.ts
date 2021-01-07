@@ -12,11 +12,11 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./sessions-card-view.component.css']
 })
 export class SessionsCardViewComponent implements OnInit {
-
+  
   @ViewChild(MatAccordion) accordion: MatAccordion;
 
   myControl = new FormControl();
-  title = 'Sessions Info. - Cards View | OnCl - Edu. Cloud';
+  title = 'Sessions Info. | OnCl - Edu. Cloud';
   
   coname:String;
   cotopic:String;
@@ -28,27 +28,29 @@ export class SessionsCardViewComponent implements OnInit {
   breakpoint: number = 3;
   length: number = 0;
   pageSize: number = 10; 
-  pageSizeOptions: number[] = [10,20,30,40];
+  pageSizeOptions: number[] = [0,5,10];
+
+  refresh(): void { window.location.reload(); }
 
   constructor(private sessionsService:SessionsService, private authService:AuthService, private titleService:Title) { 
     this.fetchRecords();
   }
 
   ngOnInit(): void {
-    this.titleService.setTitle(this.title);
     this.fetchRecords();
+    this.titleService.setTitle(this.title);
   }
 
   fetchRecords(){
     this.authService.getUserId().subscribe((res)=>{
-      this.sessionsService.getRecords(res).subscribe((data:any[])=>{
-        this.List=data;
-        this.breakpoint = (window.innerWidth <= 800) ? 1 : 3;
-        this.sessions=this.List;
-        this.length=this.sessions.length
-        console.log(this.List)
+        this.sessionsService.getRecords(res).subscribe((data:any[])=>{
+          this.List=data;
+          this.breakpoint = (window.innerWidth <= 1000) ? 1 : 3;
+          this.sessions=this.List;
+          this.length=this.sessions.length
+          console.log(this.List)
+        });
       });
-    });
   }
 
   OnPageChange(event: PageEvent){
