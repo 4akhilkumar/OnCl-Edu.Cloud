@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class TimetableService {
 
-  url = 'http://localhost:4000';
+  url = 'https://oncl.herokuapp.com';
 
   constructor(private http:HttpClient) {
   }
