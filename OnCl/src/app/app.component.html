@@ -1,32 +1,11 @@
 <mat-drawer-container>
   <mat-drawer #drawer mode="over" class="side-nav">
       <mat-list role="list" class="side-list">
-          <mat-list-item routerLink='/dashboard' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
-              <mat-icon mat-list-icon>
-                  <mat-icon class="example-tab-icon">dashboard</mat-icon>
-              </mat-icon>
-              <div mat-line>Dashboard</div>
-          </mat-list-item>
-          <mat-divider></mat-divider>
           <mat-list-item routerLink='/home' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
               <mat-icon mat-list-icon>
                   <mat-icon class="example-tab-icon">home</mat-icon>
               </mat-icon>
               <div mat-line>Home</div>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item routerLink='/contactus' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
-              <mat-icon mat-list-icon>
-                  <mat-icon class="example-tab-icon">contact_page</mat-icon>
-              </mat-icon>
-              <div mat-line>Contact Us</div>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item routerLink='/aboutus' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
-              <mat-icon mat-list-icon>
-                  <i class="material-icons">groups</i>
-              </mat-icon>
-              <div mat-line>About Us</div>
           </mat-list-item>
           <mat-divider></mat-divider>
       </mat-list>
