@@ -22,6 +22,7 @@
   
   .example-card {
     max-width: 359px;
+    cursor: pointer;
     display: block;
     border-radius: 5px;
     overflow: hidden;
