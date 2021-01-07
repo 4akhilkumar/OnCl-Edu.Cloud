@@ -1,0 +1,193 @@
+<div class="jumbo"
+    fxLayout="column"
+    fxLayout.sm="column" 
+    fxLayout.xs="column" 
+    fxLayoutAlign.xs="start center"
+    fxLayoutAlign.sm="start center" 
+    fxLayoutAlign.gt-sm="start center" 
+    fxLayoutGap="10px">
+   
+    <div fxFlex fxFlex.gt-sm="100%">
+      <h1 style="font-weight: bold;font-size: x-large; text-align: center; margin-top: 20px; letter-spacing: 0.1em; font-family: 'Quicksand', sans-serif;">The Better Way to Follow up your Schedule...!</h1>
+      <p style="font-size: large; text-align: center; letter-spacing: 0.1em; font-family: 'Neucha', cursive;">
+        Type, Search & Follow. Here we provide you, The Semester Timetable with detail info. . You can search them by the Course Name<br></p>     
+    </div>
+</div>
+
+<div fxLayout="row"
+    fxLayout.sm="column" 
+    fxLayout.xs="column" 
+    fxLayoutAlign.xs="space-between center"
+    fxLayoutAlign.sm="space-between center" 
+    fxLayoutAlign.gt-sm="space-between center" 
+    fxLayoutGap="10px" style="padding-right: 30px; padding-left: 30px; padding-bottom: 15px;">
+
+    <h1 class="title">Your Timetable</h1> 
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Day</mat-label>
+        <input matInput placeholder="Search by Day" type="text" [(ngModel)]="day" (input)="Search()" #input>
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-hint>You can use letters</mat-hint>
+      </mat-form-field>
+    </div>
+</div>
+
+<div style="padding-left: 20px; padding-right: 20px;">
+  <div *ngIf="!List">
+    <!-- Google Loader -->
+      <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+          <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+        </svg>
+      </div>
+      <h1 style="text-align: center; margin-top: 5px;"> Loading Sessions. . .</h1>
+    <!-- Google Loader -->
+    <!-- <mat-progress-bar *ngIf="!List" color = "warn" mode="indeterminate"></mat-progress-bar>
+    <h1 style="text-align: center; margin-top: 5px;"> Loading Sessions. . .</h1> -->
+  </div>
+</div>
+
+  <div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="timetable">
+
+      <ng-container matColumnDef="Day" sticky>
+        <th style="padding-right: 20px; padding-left: 20px;" mat-header-cell *matHeaderCellDef>Day/Slot</th>
+        <td mat-cell *matCellDef="let row">{{ row.day }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="1">
+        <th mat-header-cell *matHeaderCellDef>1</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot1 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="2">
+        <th mat-header-cell *matHeaderCellDef>2</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot2 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="3">
+        <th mat-header-cell *matHeaderCellDef>3</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot3 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="4">
+        <th mat-header-cell *matHeaderCellDef>4</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot4 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="5">
+        <th mat-header-cell *matHeaderCellDef>5</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot5 }}</td>
+      </ng-container>
+      
+      <ng-container matColumnDef="6">
+        <th mat-header-cell *matHeaderCellDef>6</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot6 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="7">
+        <th mat-header-cell *matHeaderCellDef>7</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot7 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="8">
+        <th mat-header-cell *matHeaderCellDef>8</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot8 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="9">
+        <th mat-header-cell *matHeaderCellDef>9</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot9 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="10">
+        <th mat-header-cell *matHeaderCellDef>10</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot10 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="11">
+        <th mat-header-cell *matHeaderCellDef>11</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot11 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="12">
+        <th mat-header-cell *matHeaderCellDef>12</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot12 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="13">
+        <th mat-header-cell *matHeaderCellDef>13</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot13 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="14">
+        <th mat-header-cell *matHeaderCellDef>14</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot14 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="15">
+        <th mat-header-cell *matHeaderCellDef>15</th>
+        <td mat-cell *matCellDef="let row">{{ row.slot15 }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastupdated">
+        <th mat-header-cell *matHeaderCellDef>Last Updated</th>
+        <td mat-cell *matCellDef="let row">{{ row.date | date }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="Edit">
+        <th mat-header-cell *matHeaderCellDef>Edit</th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button (click)="edit(row._id)">
+            <mat-icon>create</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Delete">
+        <th mat-header-cell *matHeaderCellDef>Delete</th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-raised-button class="view-all" (click)="delete(row._id)"><span class="material-icons">delete</span></button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="View">
+        <th mat-header-cell *matHeaderCellDef>View</th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-raised-button class="view-all" (click)="view(row._id)"><span class="material-icons">visibility</span></button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div>
+      <div *ngIf="length==0">
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+          <div>
+            <h1 style="font-size: 90px; padding-top: 100px; padding-bottom: 20%; color: #dadce0; font-family: 'Roboto Mono',monospace;">¯\_(ツ)_/¯</h1>
+          </div>
+          <div>
+            <h1 style="text-align: center; font-family: 'Roboto Mono',monospace; font-weight:500;">No results found for "{{input.value}}"</h1>
+          </div>
+          <div>
+            <h1 (click)="refresh()" style="text-align: center; font-weight:400; padding-top: 5%; cursor: pointer; color: #1a73e8;">Clear your filters and try again</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Google Loader -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46156385-1', 'cssscript.com');
+  ga('send', 'pageview');
+
+</script>
+<!-- Google Loader -->
