@@ -14,11 +14,13 @@ mongoose
 })
 .then(() => console.log("Connected to MongoDB, Successfully."));
 
+const TimetableRoute=require('./routes/timetableRoute');
 const SessionRoute=require('./routes/sessionRoute');
 const UserRoute=require('./routes/userRoute');
 
 app.use(cors());
-app.use(bodyparser.json());  
+app.use(bodyparser.json());
+app.use('/timetable',TimetableRoute);
 app.use("/sessions", SessionRoute);
 app.use('/user',UserRoute);
 
