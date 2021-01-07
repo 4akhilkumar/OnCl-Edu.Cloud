@@ -44,7 +44,7 @@ app.use("/sessions", SessionRoute);
 app.use('/user',UserRoute);
 
 app.get("*", (req, res) => { 
-  res.sendFile(path.resolve(process.cwd() + "/whin/dist/whin/index.html"));
+  res.sendFile(path.resolve(process.cwd() + "/OnCl/dist/OnCl/index.html"));
 });
 
 app.listen(port, () => console.log("Running on port " + port));
