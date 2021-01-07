@@ -10,6 +10,7 @@ import { ViewSessionComponent } from './view-session/view-session.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SessionsCardViewComponent } from './sessions-card-view/sessions-card-view.component';
 import { DeleteaccountComponent } from './deleteaccount/deleteaccount.component';
+import { TimetableComponent } from './timetable/timetable.component';
 import { TestingComponent } from './testing/testing.component';
 import { AuthGuard } from './auth.guard';
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'edit/:id',component:EditComponent,canActivate: [AuthGuard]},
   {path:'view/:id',component:ViewSessionComponent,canActivate: [AuthGuard]},
   {path:'deleteaccount',component:DeleteaccountComponent,canActivate: [AuthGuard]},
+  {path:'timetable',component:TimetableComponent,canActivate: [AuthGuard]},
   {path:'',component:HomeComponent}
 ];
 
