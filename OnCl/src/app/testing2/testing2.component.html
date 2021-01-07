@@ -1,0 +1,176 @@
+<div class="jumbo"
+    fxLayout="column"
+    fxLayout.sm="column" 
+    fxLayout.xs="column" 
+    fxLayoutAlign.xs="start center"
+    fxLayoutAlign.sm="start center" 
+    fxLayoutAlign.gt-sm="start center" 
+    fxLayoutGap="10px">
+  
+    <div fxFlex fxFlex.gt-sm="100%">
+      <h1 style="font-weight: bold;font-size: x-large; text-align: center; margin-top: 20px; letter-spacing: 0.1em; font-family: 'Quicksand', sans-serif;">The Better Way to Find your Sessions...!</h1>
+      <p style="font-size: large; text-align: center; letter-spacing: 0.1em; font-family: 'Neucha', cursive;">
+        Type, Search & Learn. Here we provide you, The Semester Courses - recorded video sessions with detail info. i.e., by Topics covered 
+        in the session, Faculty who taught that session, when that session held and source link for the session. You can search them by the 
+        Course Name, Topics, Faculty Name, Date.<br></p>     
+    </div>
+</div>
+
+<!-- <mat-button-toggle-group style="margin: 20px 20px;" #group="matButtonToggleGroup">
+  <mat-button-toggle style="color:white; background-color: rgb(118, 233, 137); font-weight: 500;" disabled>Cards View</mat-button-toggle>
+  <mat-button-toggle routerLink="/sessions-table-view" aria-label="Text align left">
+    <mat-icon>table_chart</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle routerLink="/sessions-card-view" aria-label="Text align center">
+    <mat-icon style="color: rgb(118, 233, 137);">view_agenda</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group> -->
+
+<div style="padding-left: 20px; padding-right: 20px;">
+  <div *ngIf="!List">
+    <!-- Google Loader -->
+      <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+          <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+        </svg>
+      </div>
+      <h1 style="text-align: center; margin-top: 5px;"> Loading Sessions. . .</h1>
+    <!-- Google Loader -->
+    <!-- <mat-progress-bar *ngIf="!List" color = "warn" mode="indeterminate"></mat-progress-bar>
+    <h1 style="text-align: center; margin-top: 5px;"> Loading Sessions. . .</h1> -->
+  </div>
+</div>
+
+<div fxLayout="row" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column">
+  <div style="padding-left: 20px;">
+  <div style="border: 2px solid rgb(0, 0, 0); border-radius: 10px; margin-bottom: 10px;">
+    <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 10px; font-weight: bold; font-size: x-large; text-align: center;">
+      <p>Filter</p>
+    </div>
+    <div style="padding-left: 4%; padding-right: 4%;">
+      <div class="example-action-buttons" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button mat-raised-button style="background-color: black; color:white; margin-right: 5px; margin-top: 10px;" (click)="accordion.openAll()">Expand All</button>
+        <button mat-raised-button style="background-color: black; color:white; margin-top: 10px;" (click)="accordion.closeAll()">Collapse All</button>
+      </div>
+    </div>
+    <div style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;">
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: rgb(118, 233, 137); font-weight: 500;">
+              Course
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon style="color: rgb(118, 233, 137);">class</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field appearance="outline">
+            <mat-label>Eg. Technical Skills</mat-label>
+            <input matInput matInput type="text" [(ngModel)]="coname" (input)="SearchCoName()" #input1>
+          </mat-form-field>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: #F1615C; font-weight: 500;">
+              Topics
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon style="color: #F1615C;">topic</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field appearance="outline">
+            <mat-label>Eg. XML</mat-label>
+            <input matInput matInput type="text" [(ngModel)]="cotopic" (input)="SearchTopic()" #input2>
+          </mat-form-field>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: #4285f4; font-weight: 500;">
+              Faculty
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon style="color: #4285f4;">account_circle</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field appearance="outline">
+            <mat-label>Eg. Faculty Name</mat-label>
+            <input matInput matInput type="text" [(ngModel)]="cofaculty" (input)="SearchFaculty()" #input3>
+          </mat-form-field>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: #fcc834; font-weight: 500;">
+              Date
+            </mat-panel-title>
+            <mat-panel-description>
+              <mat-icon style="color: #fcc834;">today</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field appearance="outline">
+            <mat-label>Eg. 2021-01-02</mat-label>
+            <input matInput matInput type="text" [(ngModel)]="codate" (input)="SearchDate()" #input4>
+          </mat-form-field>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    </div>
+  </div>
+
+  <div style="width: 100%;">
+    <div *ngIf="List">
+      <div *ngIf="length==0">
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+          <div>
+            <h1 style="font-size: 90px; padding-top: 100px; padding-bottom: 20%; color: #dadce0; font-family: 'Roboto Mono',monospace;">\(o_o)/</h1>
+          </div>
+          <div>
+            <h1 style="text-align: center; font-family: 'Roboto Mono',monospace; font-weight:500;">No results found for "{{input1.value || input2.value  || input3.value || input4.value}}"</h1>
+          </div>
+          <div>
+            <h1 (click)="refresh()" style="text-align: center; font-weight:400; padding-top: 5%; cursor: pointer; color: #1a73e8;">Clear your filters and try again</h1>
+          </div>
+        </div>
+      </div>
+      <div>
+        <mat-grid-list [cols]="breakpoint" rowHeight="370px" (window:resize)="onResize($event)" >
+          <mat-grid-tile style="outline: none;" *ngFor="let f of List">
+            <div>
+              <mat-card class="example-card">
+                <mat-toolbar class="title" color="primary">
+                  <span class="material-icons">class</span>{{f.coursename}}</mat-toolbar>
+                  <mat-card-content>
+                      <div style="margin: 10px;" fxLayout="column" fxLayoutAlign="space-evenly start">
+                        <div fxLayout="column" fxLayoutAlign="space-evenly start" fxLayoutGap="5px">
+                          <mat-card-subtitle><b>LTPS:</b> {{f.sessiontype}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Topics:</b> {{f.topicscovered}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>DOC:</b> {{f.doc}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Sharable Link:</b> {{f.url}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Faculty Name:</b> {{f.facultyname}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Faculty E-Mail:</b> {{f.facultyemail}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Held via:</b> {{f.platform}}</mat-card-subtitle>
+                          <mat-card-subtitle><b>Last Updated info.:</b> {{f.date}}</mat-card-subtitle>
+                        </div>
+                      </div>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="OnPageChange($event)"></mat-paginator>
+    </div>
+  </div>
+</div>
+
+<!-- Google Loader -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46156385-1', 'cssscript.com');
+  ga('send', 'pageview');
+
+</script>
+<!-- Google Loader -->
