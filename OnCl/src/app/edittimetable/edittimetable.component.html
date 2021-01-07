@@ -1,0 +1,138 @@
+<div style="padding-top: 50px; padding-bottom: 50px; padding-left: 10%; padding-right: 10%;">
+    <div class="example-action-buttons">
+      <button mat-raised-button style="background-color: black; color:white; margin-right: 5px;" (click)="accordion.openAll()">Expand All</button>
+      <button mat-raised-button style="background-color: black; color:white;" (click)="accordion.closeAll()">Collapse All</button>
+    </div>
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title style="color: #F1615C; letter-spacing: 0.1em; font-weight: 550;">
+            Morning Slot Details
+          </mat-panel-title>
+          <mat-panel-description>
+            Enter the day, course name & LTPS
+            <mat-icon style="color: #F1615C;">today</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        
+        <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column">
+  
+          <mat-form-field appearance="outline">
+            <mat-label>Day of the Week</mat-label>
+              <mat-select [formControl]="formData.day">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let day of day" [value]="day">{{day}}</mat-option>
+              </mat-select>
+            <mat-error *ngIf="formData.day.invalid">{{getErrorDay()}}</mat-error>
+          </mat-form-field>
+  
+        </div>
+  
+        <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column">
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 1</mat-label>
+              <input matInput type="text" [formControl]="formData.slot1" placeholder="Slot - 1" required>
+              <mat-error *ngIf="formData.slot1.invalid">{{getErrorSlot1()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 2</mat-label>
+              <input matInput type="text" [formControl]="formData.slot2" placeholder="Slot - 2" required>
+              <mat-error *ngIf="formData.slot2.invalid">{{getErrorSlot2()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 3</mat-label>
+              <input matInput type="text" [formControl]="formData.slot3" placeholder="Slot - 3" required>
+              <mat-error *ngIf="formData.slot3.invalid">{{getErrorSlot3()}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column">
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 4</mat-label>
+              <input matInput type="text" [formControl]="formData.slot4" placeholder="Slot - 4" required>
+              <mat-error *ngIf="formData.slot4.invalid">{{getErrorSlot4()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 5</mat-label>
+              <input matInput type="text" [formControl]="formData.slot5" placeholder="Slot - 5" required>
+              <mat-error *ngIf="formData.slot5.invalid">{{getErrorSlot5()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 6</mat-label>
+              <input matInput type="text" [formControl]="formData.slot6" placeholder="Slot - 6" required>
+              <mat-error *ngIf="formData.slot6.invalid">{{getErrorSlot6()}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column">
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 7</mat-label>
+              <input matInput type="text" [formControl]="formData.slot7" placeholder="Slot - 7" required>
+              <mat-error *ngIf="formData.slot7.invalid">{{getErrorSlot7()}}</mat-error>
+          </mat-form-field>
+        </div>
+  
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title style="color: #4285f4; letter-spacing: 0.1em; font-weight: 550;">
+            Afternoon Slot Details
+          </mat-panel-title>
+          <mat-panel-description>
+            Enter the day, course name & LTPS
+            <mat-icon style="color: #4285f4;">today</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+  
+        <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column">
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 8</mat-label>
+              <input matInput type="text" [formControl]="formData.slot8" placeholder="Slot - 8" required>
+              <mat-error *ngIf="formData.slot8.invalid">{{getErrorSlot8()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 9</mat-label>
+              <input matInput type="text" [formControl]="formData.slot9" placeholder="Slot - 9" required>
+              <mat-error *ngIf="formData.slot9.invalid">{{getErrorSlot9()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 10</mat-label>
+              <input matInput type="text" [formControl]="formData.slot10" placeholder="Slot - 10" required>
+              <mat-error *ngIf="formData.slot10.invalid">{{getErrorSlot9()}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column">
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 11</mat-label>
+              <input matInput type="text" [formControl]="formData.slot11" placeholder="Slot - 11" required>
+              <mat-error *ngIf="formData.slot11.invalid">{{getErrorSlot4()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 12</mat-label>
+              <input matInput type="text" [formControl]="formData.slot12" placeholder="Slot - 12" required>
+              <mat-error *ngIf="formData.slot12.invalid">{{getErrorSlot12()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 13</mat-label>
+              <input matInput type="text" [formControl]="formData.slot13" placeholder="Slot - 13" required>
+              <mat-error *ngIf="formData.slot13.invalid">{{getErrorSlot13()}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign=" start" fxLayoutGap="10px" fxLayout.sm="column" fxLayout.xs="column">
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 14</mat-label>
+              <input matInput type="text" [formControl]="formData.slot14" placeholder="Slot - 14" required>
+              <mat-error *ngIf="formData.slot14.invalid">{{getErrorSlot14()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Slot - 15</mat-label>
+              <input matInput type="text" [formControl]="formData.slot15" placeholder="Slot - 15" required>
+              <mat-error *ngIf="formData.slot15.invalid">{{getErrorSlot15()}}</mat-error>
+          </mat-form-field>
+        </div>
+  
+      </mat-expansion-panel>
+      </mat-accordion>
+        <div fxLayout="row" fxLayoutAlign="end end" style="padding-top: 10px;">
+          <button mat-raised-button style="margin: 10px 0px 10px 10px;" routerLink="/timetable-table-view">Return</button>
+          <button mat-raised-button class="example-button" (click)="onSubmit()" [disabled]="formData.day.invalid || formData.slot1.invalid || formData.slot2.invalid || formData.slot3.invalid || formData.slot4.invalid || formData.slot5.invalid || formData.slot6.invalid || formData.slot7.invalid || formData.slot8.invalid || formData.slot9.invalid || formData.slot10.invalid || formData.slot11.invalid || formData.slot12.invalid || formData.slot13.invalid || formData.slot14.invalid || formData.slot15.invalid">Modify</button>
+      </div>
+  </div>
