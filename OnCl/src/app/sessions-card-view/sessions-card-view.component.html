@@ -26,20 +26,20 @@
   </mat-button-toggle>
 </mat-button-toggle-group>
 
-<div style="padding-left: 20px; padding-right: 20px;">
-  <div *ngIf="!List">
+<!-- <div style="padding-left: 20px; padding-right: 20px;">
+  <div *ngIf="!List"> -->
     <!-- Google Loader -->
-      <div class="loader">
+      <!-- <div class="loader">
         <svg class="circular" viewBox="25 25 50 50">
           <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
         </svg>
       </div>
-      <h1 style="text-align: center; margin-top: 5px;"> Loading Sessions. . .</h1>
+      <h1 style="text-align: center; margin-top: 5px;"> Loading Sessions. . .</h1> -->
     <!-- Google Loader -->
     <!-- <mat-progress-bar *ngIf="!List" color = "warn" mode="indeterminate"></mat-progress-bar>
     <h1 style="text-align: center; margin-top: 5px;"> Loading Sessions. . .</h1> -->
-  </div>
-</div>
+  <!-- </div>
+</div> -->
 
 <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
   <div style="padding-left: 20px; padding-right: 20px;">
@@ -55,7 +55,8 @@
     </div>
     <div style="padding-left: 10px; padding-right: 10px; padding-bottom: 10px;">
       <mat-accordion class="example-headers-align" multi>
-        <mat-expansion-panel [expanded]="true">
+        <!-- <mat-expansion-panel [expanded]="true"> -->
+        <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title style="color: rgb(118, 233, 137); font-weight: 500;">
               Course
@@ -69,7 +70,7 @@
             <input matInput matInput type="text" [(ngModel)]="coname" (input)="SearchCoName()" #input1>
           </mat-form-field>
         </mat-expansion-panel>
-        <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title style="color: #F1615C; font-weight: 500;">
               Topics
@@ -83,7 +84,7 @@
             <input matInput matInput type="text" [(ngModel)]="cotopic" (input)="SearchTopic()" #input2>
           </mat-form-field>
         </mat-expansion-panel>
-        <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title style="color: #4285f4; font-weight: 500;">
               Faculty
@@ -97,7 +98,7 @@
             <input matInput matInput type="text" [(ngModel)]="cofaculty" (input)="SearchFaculty()" #input3>
           </mat-form-field>
         </mat-expansion-panel>
-        <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title style="color: #fcc834; font-weight: 500;">
               Date
@@ -117,6 +118,20 @@
   </div>
 
   <div style="width: 100%;">
+    <div style="padding-left: 20px; padding-right: 20px;">
+      <div *ngIf="!List">
+        <!-- Google Loader -->
+          <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+              <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+          </div>
+          <h1 style="text-align: center; margin-top: 5px;"> Loading Sessions. . .</h1>
+        <!-- Google Loader -->
+        <!-- <mat-progress-bar *ngIf="!List" color = "warn" mode="indeterminate"></mat-progress-bar>
+        <h1 style="text-align: center; margin-top: 5px;"> Loading Sessions. . .</h1> -->
+      </div>
+    </div>
     <div *ngIf="List">
       <div *ngIf="length==0">
         <div fxLayout="column" fxLayoutAlign="space-around center">
