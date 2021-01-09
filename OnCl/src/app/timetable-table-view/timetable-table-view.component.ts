@@ -12,7 +12,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class TimetableTableViewComponent implements OnInit {
 
-  displayedColumns=['Day','1','2','3', '4','5','6','7', '8', '9', '10', '11', '12', '13', '14', '15', 'lastupdated','Edit','Delete','View'];
+  displayedColumns=['Day','1','2','3', '4','5','6','7', '8', '9', '10', '11', '12', '13', '14', '15', 'lastupdated','View','Edit','Delete'];
   timetable=[]
   length;
   List=[]
