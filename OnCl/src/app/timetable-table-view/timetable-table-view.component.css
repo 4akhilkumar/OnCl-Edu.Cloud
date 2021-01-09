@@ -26,6 +26,12 @@
     text-align: center;
 }
 
+  .mat-divider{
+    border-top-color: #ffffff;
+    border-top-width: 2px;
+    border-top-style: solid;
+  }
+
   .example-container {
     height: auto; 
     max-width: 100%;
@@ -35,6 +41,7 @@
   
   table {
     width: 100%;
+    border-collapse: separate;
   }
   
   th.mat-column-position, td.mat-column-position {
@@ -51,7 +58,11 @@
     text-align: center;
     color: white;
     background-color: #5f95eb;
-    border: 2px solid #5f95eb;
+    /* border: 2px solid #5f95eb; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 td.mat-cell {
@@ -63,6 +74,7 @@ td.mat-cell {
 th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
     padding-left: 0px;
 }
+
 
   /* <!-- Google Loader --> */
   
