@@ -17,8 +17,8 @@
 </div>
 
 <mat-button-toggle-group style="margin:20px" #group="matButtonToggleGroup">
-  <mat-button-toggle style="color:white; background-color: black;" disabled>Table View</mat-button-toggle>
-  <mat-button-toggle routerLink="/sessions-table-view" aria-label="Text align left">
+  <mat-button-toggle style="color:white; background-color: #5f95eb;" disabled>Table View</mat-button-toggle>
+  <mat-button-toggle style="color: #5f95eb;" routerLink="/sessions-table-view" aria-label="Text align left">
     <mat-icon>table_chart</mat-icon>
   </mat-button-toggle>
   <mat-button-toggle routerLink="/sessions-card-view" aria-label="Text align center">
@@ -26,18 +26,26 @@
   </mat-button-toggle>
 </mat-button-toggle-group>
 
-<div fxLayout="row" fxLayoutAlign="space-between center" style="margin: 20px; padding: 25px;">
-  <span class="title">Your Sessions</span>
-  <div fxLayoutGap="25px" style="padding-right: 3%;">
-    <mat-form-field appearance="outline">
-      <mat-label>Course Name</mat-label>
-      <input matInput placeholder="Search by Course Name" type="text" [(ngModel)]="coname" (input)="Search()" #input>
-      <mat-icon matSuffix>search</mat-icon>
-      <mat-hint>You can use letters</mat-hint>
-    </mat-form-field>
-  </div>
+<div fxLayout="row" 
+    fxLayout.sm="column" 
+    fxLayout.xs="column" 
+    fxLayoutAlign.xs="space-between center"
+    fxLayoutAlign.sm="space-between center" 
+    fxLayoutAlign.gt-sm="space-between center" 
+    fxLayoutGap="10px" style="padding-right: 30px; padding-left: 30px; padding-bottom: 15px;">
+
+    <h1 class="title">Your Sessions</h1> 
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Course Name</mat-label>
+        <input matInput placeholder="Search by Course Name" type="text" [(ngModel)]="coname" (input)="Search()" #input>
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-hint>You can use letters</mat-hint>
+      </mat-form-field>
+    </div>
 </div>
-<div *ngIf="sessions" style="margin-bottom: 50px;">
+
+<!-- <div *ngIf="sessions" style="margin-bottom: 50px;">
   <div *ngIf="length==0">
     <h1 style="text-align: center;font-weight:500;text-transform: uppercase;">No results found for "{{input.value}}"</h1>
   </div>
@@ -116,7 +124,7 @@
 
     </table>
   </div>
-</div>
+</div> -->
 
 <div [hidden]="sessions" style="text-align: center;">
   <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
