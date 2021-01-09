@@ -16,10 +16,9 @@ th.mat-header-cell {
 }
 
 .title {
-    font-family: "Cera Pro", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-    font-weight: 700;
+    font-family: 'Fredericka the Great', cursive;
     font-size: 30px;
-    color: #0f346c;
+    color: #F1615C;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-align: center;
