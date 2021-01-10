@@ -39,7 +39,7 @@
                     <label for="acceptTerms2" class="form-check-label">Yes, I want to permanently delete this OnCl Account and all its data.</label>
                     <div *ngIf="submitted && f.acceptTerms2.errors" class="invalid-feedback">Please confirm that you wish to delete this OnCl Account.</div>
                 </div>
-                <div>
+                <div fxLayout.md="row" fxLayout="row" fxLayout.sm="row" fxLayout.xs="row" fxLayoutAlign="start center" fxLayoutGap="10px">
                     <button mat-raised-button style="margin-left: 5px; color: tomato;">
                         <span class="material-icons">delete</span>
                         <span>DELETE ACCOUNT</span>
