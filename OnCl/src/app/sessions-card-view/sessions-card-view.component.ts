@@ -28,7 +28,7 @@ export class SessionsCardViewComponent implements OnInit {
   breakpoint: number = 3;
   length: number = 0;
   pageSize: number = 10; 
-  pageSizeOptions: number[] = [0,5,10];
+  pageSizeOptions: number[] = [10, 20, 30, 40];
 
   refresh(): void { window.location.reload(); }
 
