@@ -52,6 +52,8 @@ import { Testing2Component } from './testing2/testing2.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { EdittimetableComponent } from './edittimetable/edittimetable.component';
 import { TimetableTableViewComponent } from './timetable-table-view/timetable-table-view.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NaComponent } from './na/na.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,8 @@ import { TimetableTableViewComponent } from './timetable-table-view/timetable-ta
     TimetableComponent,
     EdittimetableComponent,
     TimetableTableViewComponent,
+    ProfileComponent,
+    NaComponent,
   ],
   imports: [
     BrowserModule,
