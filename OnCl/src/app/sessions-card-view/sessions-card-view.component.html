@@ -67,7 +67,8 @@
           </mat-expansion-panel-header>
           <mat-form-field appearance="outline">
             <mat-label>Eg. Technical Skills</mat-label>
-            <input matInput matInput type="text" [(ngModel)]="coname" (input)="SearchCoName()" #input1>
+            <input onkeypress="return (event.charCode > 64 && 
+            event.charCode < 91) || (event.charCode == 32) || (event.charCode > 96 && event.charCode < 123)" matInput type="text" [(ngModel)]="coname" (input)="SearchCoName()" #input1>
           </mat-form-field>
         </mat-expansion-panel>
         <mat-expansion-panel>
@@ -81,7 +82,8 @@
           </mat-expansion-panel-header>
           <mat-form-field appearance="outline">
             <mat-label>Eg. XML</mat-label>
-            <input matInput matInput type="text" [(ngModel)]="cotopic" (input)="SearchTopic()" #input2>
+            <input matInput onkeypress="return (event.charCode > 64 && 
+            event.charCode < 91) || (event.charCode == 32) || (event.charCode > 96 && event.charCode < 123) || (event.charCode > 47 && event.charCode < 58)" type="text" [(ngModel)]="cotopic" (input)="SearchTopic()" #input2>
           </mat-form-field>
         </mat-expansion-panel>
         <mat-expansion-panel>
@@ -95,7 +97,8 @@
           </mat-expansion-panel-header>
           <mat-form-field appearance="outline">
             <mat-label>Eg. Faculty Name</mat-label>
-            <input matInput matInput type="text" [(ngModel)]="cofaculty" (input)="SearchFaculty()" #input3>
+            <input onkeypress="return (event.charCode > 64 && 
+            event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" matInput type="text" [(ngModel)]="cofaculty" (input)="SearchFaculty()" #input3>
           </mat-form-field>
         </mat-expansion-panel>
         <mat-expansion-panel>
@@ -109,7 +112,8 @@
           </mat-expansion-panel-header>
           <mat-form-field appearance="outline">
             <mat-label>Eg. 2021-01-02</mat-label>
-            <input matInput matInput type="text" [(ngModel)]="codate" (input)="SearchDate()" #input4>
+            <input onkeypress="return (event.charCode > 47 && 
+            event.charCode < 58) || (event.charCode == 45)" matInput type="text" [(ngModel)]="codate" (input)="SearchDate()" #input4>
           </mat-form-field>
         </mat-expansion-panel>
       </mat-accordion>

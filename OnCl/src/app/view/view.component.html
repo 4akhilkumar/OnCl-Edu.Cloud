@@ -38,7 +38,8 @@
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Course Name</mat-label>
-        <input matInput placeholder="Search by Course Name" type="text" [(ngModel)]="coname" (input)="Search()" #input>
+        <input onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" matInput placeholder="Search by Course Name" type="text" [(ngModel)]="coname" (input)="Search()" #input>
         <mat-icon matSuffix>search</mat-icon>
         <mat-hint>You can use letters</mat-hint>
       </mat-form-field>

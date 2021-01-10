@@ -26,7 +26,8 @@
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Day</mat-label>
-        <input matInput placeholder="Search by Day" type="text" [(ngModel)]="day" (input)="Search()" #input>
+        <input matInput onkeypress="return (event.charCode > 64 && 
+        event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" placeholder="Search by Day" type="text" [(ngModel)]="day" (input)="Search()" #input>
         <mat-icon matSuffix>search</mat-icon>
         <mat-hint>You can use letters</mat-hint>
       </mat-form-field>
