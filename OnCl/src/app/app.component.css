@@ -1,6 +1,10 @@
 .side-nav{
     width: 200px;
-    background: rgb(241, 97, 92);
+    background: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .side-list{
@@ -12,7 +16,7 @@
 
 .list-item{
     outline: none;
-    color: floralwhite;
+    color: rgb(0, 0, 0);
     font-size: medium;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -33,6 +37,11 @@
     color: black;
     background-color:rgb(250, 250, 250);
 }
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+  
 
 /* ::ng-deep.mat-menu-panel {
     max-width: none !important;
