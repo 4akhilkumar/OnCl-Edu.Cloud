@@ -26,18 +26,18 @@
             <mat-icon mat-list-icon>
                 <mat-icon class="example-tab-icon">video_library</mat-icon>
             </mat-icon>
-            <div title="Course Sessions E - Cloud" mat-line>Course Sessions E - Cloud</div>
+            <div title="Course Sessions E - Cloud" mat-line>Sessions E - Cloud</div>
         </mat-list-item>
         <mat-divider></mat-divider>
       </mat-list>
   </mat-drawer>
   <mat-drawer-content fxLayout="column" fxFlexFill>
     
-    <div fxLayout="row" fxLayoutAlign="space-between center" style="background-color: rgb(241, 97, 92);height: 65px;color: white;padding-right: 5px;">
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="background-color: white; height: 65px; color: black; padding-right: 5px;">
       <div fxLayoutAlign="center center">
           <button mat-icon-button (click)="drawer.toggle()" style="outline: none;"><span class="material-icons">menu</span></button>
           <img src="../assets/images/icon/whin.ico" style="width:30px; height: 30px; margin-right: 5px;">
-          <span style="font-size: 200%; font-family: 'Acme', sans-serif;"> OnCl - Edu. Cloud </span>
+          <span style="font-size: 200%; font-weight: 500; font-family: 'Fredoka One', cursive;"> <span style="color: tomato;">O</span><span style="color: #5f95eb;">n</span><span style="color: rgb(118, 233, 137);">C</span><span style="color: #fcc834">l</span> - Edu. Cloud </span>
       </div>
       <div fxLayoutAlign="center center">
         <button mat-icon-button style="margin-right:20px; outline: none;" [matMenuTriggerFor]="OnClServices">
@@ -48,52 +48,52 @@
         </button>
         <mat-menu #more_options="matMenu" xPosition="before">
             <div style="padding-right: 5px; padding-left: 5px;">
-                <button mat-menu-item [matMenuTriggerFor]="two_options">My Account</button>
-                <button mat-menu-item [matMenuTriggerFor]="three_options">My Work</button>
-                <button mat-menu-item style="color: white; border-radius: 5px; background-color: black;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Log Out</button>
+                <button mat-menu-item [matMenuTriggerFor]="two_options"><span><mat-icon class="example-tab-icon">account_tree</mat-icon></span>My Account</button>
+                <button mat-menu-item [matMenuTriggerFor]="three_options"><span><mat-icon class="example-tab-icon">workspaces</mat-icon></span>My Work</button>
+                <button mat-menu-item style="color: white; border-radius: 5px; background-color: black;" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()"><span><mat-icon style="color: white;" class="example-tab-icon">logout</mat-icon></span>Log Out</button>
             </div>
         </mat-menu>
         <mat-menu #two_options="matMenu" xPosition="before">
             <div style="padding-right: 5px; padding-left: 5px;">
-                <button mat-menu-item routerLink='/profile'>My Profile</button>
-                <button mat-menu-item routerLink='/deleteaccount'>Manage Account</button>
+                <button mat-menu-item routerLink='/profile'><span><mat-icon class="example-tab-icon">account_circle</mat-icon></span>My Profile</button>
+                <button mat-menu-item routerLink='/deleteaccount'><span><mat-icon class="example-tab-icon">admin_panel_settings</mat-icon></span>Manage Account</button>
             </div>
         </mat-menu>
         <mat-menu #three_options="matMenu" xPosition="before">
             <div style="padding-right: 5px; padding-left: 5px;">
-                <button mat-menu-item [matMenuTriggerFor]="sessions_options">Sessions</button>
-                <button mat-menu-item [matMenuTriggerFor]="timetable_options">Time Table</button>
-                <button mat-menu-item [matMenuTriggerFor]="NA_options">News</button>
+                <button mat-menu-item [matMenuTriggerFor]="sessions_options"><span><mat-icon class="example-tab-icon">video_library</mat-icon></span>Sessions</button>
+                <button mat-menu-item [matMenuTriggerFor]="timetable_options"><span><mat-icon class="example-tab-icon">today</mat-icon></span>Time Table</button>
+                <button mat-menu-item [matMenuTriggerFor]="NA_options"><span><mat-icon class="example-tab-icon"> new_releases </mat-icon></span>News</button>
             </div>
         </mat-menu>
         <mat-menu #sessions_options="matMenu" xPosition="before">
             <div style="padding-right: 5px; padding-left: 5px;">
-                <button mat-menu-item routerLink='/sessions'>Add Session Info.</button>
-                <button mat-menu-item routerLink='/sessions-table-view'>View Session Info.</button>
+                <button mat-menu-item routerLink='/sessions'><span><mat-icon class="example-tab-icon">library_add</mat-icon></span>Add Session Info.</button>
+                <button mat-menu-item routerLink='/sessions-table-view'><span><mat-icon class="example-tab-icon">switch_video</mat-icon></span>View Session Info.</button>
             </div>
         </mat-menu>
         <mat-menu #timetable_options="matMenu" xPosition="before">
             <div style="padding-right: 5px; padding-left: 5px;">
-                <button mat-menu-item routerLink='/timetable'>Add Timetable Info.</button>
-                <button mat-menu-item routerLink='/timetable-table-view'>View Timetable Info.</button>
+                <button mat-menu-item routerLink='/timetable'><span><mat-icon class="example-tab-icon">book_online</mat-icon></span>Add Timetable Info.</button>
+                <button mat-menu-item routerLink='/timetable-table-view'><span><mat-icon class="example-tab-icon">calendar_view_day</mat-icon></span>View Timetable Info.</button>
             </div>
         </mat-menu>
         <mat-menu #NA_options="matMenu" xPosition="before">
             <div style="padding-right: 5px; padding-left: 5px;">
-                <button mat-menu-item routerLink='/na'>Add N & A</button>
-                <button mat-menu-item routerLink='/na'>View N & A</button>
+                <button mat-menu-item routerLink='/na'><span><mat-icon class="example-tab-icon">note_add</mat-icon></span>Add N & A</button>
+                <button mat-menu-item routerLink='/na'><span><mat-icon class="example-tab-icon">wysiwyg</mat-icon></span>View N & A</button>
             </div>
         </mat-menu>
         <mat-menu #OnClServices="matMenu" xPosition="before">
             <div style="padding-right: 5px; padding-left: 5px;">
-                <button mat-menu-item routerLink='/sessions-card-view'>Course Sessions E - Cloud</button>
-                <button mat-menu-item routerLink='/na'>News & Announcements</button>
-                <button mat-menu-item routerLink='/timetable-table-view'>Timetable & Schedule</button>
+                <button mat-menu-item routerLink='/sessions-card-view'><span><mat-icon class="example-tab-icon">video_library</mat-icon></span>Course Sessions E - Cloud</button>
+                <button mat-menu-item routerLink='/na'><span><mat-icon class="example-tab-icon">new_releases</mat-icon></span>News & Announcements</button>
+                <button mat-menu-item routerLink='/timetable-table-view'><span><mat-icon class="example-tab-icon">today</mat-icon></span>Timetable & Schedule</button>
             </div>
         </mat-menu>
           <button style="outline: none;" *ngIf="!_authService.loggedIn()" mat-raised-button style="margin-right:20px" routerLink='/login' routerLinkActive='active2'><i class="material-icons">login</i>Login</button>
       </div>
-  </div>   
+    </div>   
   <div fxFlex>
       <router-outlet></router-outlet>
   </div>
