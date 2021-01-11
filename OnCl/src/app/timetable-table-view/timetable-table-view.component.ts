@@ -17,7 +17,7 @@ export class TimetableTableViewComponent implements OnInit {
   length;
   List=[]
   day:String;
-  title = 'Timetable Info. - Table View | OnCl - Edu. Cloud';
+  title = 'Timetable Info. | OnCl - Edu. Cloud';
   constructor(private timetableService:TimetableService, private router:Router, private snackBar: MatSnackBar, private authService:AuthService, private titleService:Title) { 
     this.fetchRecords();
   }
