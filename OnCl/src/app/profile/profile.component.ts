@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 declare const methodname: any; //We use this to use any methods that we declared in custome.js file
 
@@ -7,7 +8,7 @@ declare const methodname: any; //We use this to use any methods that we declared
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {;
+export class ProfileComponent implements OnInit {
 
   printDiv(divName) {
     var printContents = document.getElementById(divName).innerHTML;
@@ -16,11 +17,14 @@ export class ProfileComponent implements OnInit {;
     window.print();
     document.body.innerHTML = originalContents;
     window.location.reload();
-}
+  }
 
-  constructor() { }
+  title = 'My Profile - My Resume | OnCl - Edu. Cloud';
+
+  constructor(private titleService:Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle(this.title);
   }
 
 }
