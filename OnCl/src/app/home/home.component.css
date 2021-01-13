@@ -10,7 +10,7 @@
   .fewcards {
     border-radius: 5px;
     padding: 30px;
-    background: rgba(238, 53, 53, 0.8);
+    /* background: rgba(238, 53, 53, 0.8); */
     min-height: 100px;
   }
 
@@ -26,7 +26,11 @@
     display: block;
     border-radius: 5px;
     overflow: hidden;
-    transition: all 0.3s ease-out; 
+    transition: all 0.3s ease-out;
+    box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 2px 6px 2px rgba(60,64,67,.15);
+    /* border-style: solid; 
+    border: 5px solid;
+    border-color: #F1615C #4285f4 #fcc834 #76e989; */
   }
   
   .example-card:hover {
