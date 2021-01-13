@@ -1,7 +1,10 @@
 <mat-drawer-container>
   <mat-drawer #drawer mode="over" class="side-nav">
       <mat-list role="list" class="side-list">
-          <mat-list-item routerLink='/home' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
+        <mat-list-item routerLink='/home' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
+           
+        </mat-list-item>
+          <!-- <mat-list-item routerLink='/home' routerLinkActive='active' (click)="drawer.toggle()" class="list-item">
               <mat-icon mat-list-icon>
                   <mat-icon class="example-tab-icon">home</mat-icon>
               </mat-icon>
@@ -28,14 +31,14 @@
             </mat-icon>
             <div title="Course Sessions E - Cloud" mat-line>Sessions E - Cloud</div>
         </mat-list-item>
-        <mat-divider></mat-divider>
+        <mat-divider></mat-divider> -->
       </mat-list>
   </mat-drawer>
   <mat-drawer-content fxLayout="column" fxFlexFill>
     
     <div fxLayout="row" fxLayoutAlign="space-between center" style="background-color: white; height: 65px; color: black; padding-right: 5px;">
       <div fxLayoutAlign="center center">
-          <button mat-icon-button (click)="drawer.toggle()" style="outline: none;"><span class="material-icons">menu</span></button>
+          <button mat-icon-button (click)="drawer.toggle()" style="outline: none; margin-left: 5px;"><span class="material-icons">menu</span></button>
           <img src="../assets/images/icon/whin.ico" style="width:30px; height: 30px; margin-right: 5px;">
           <span style="font-size: 200%; font-weight: 500; font-family: 'Fredoka One', cursive;"> <span style="color: tomato;">O</span><span style="color: #5f95eb;">n</span><span style="color: rgb(118, 233, 137);">C</span><span style="color: #fcc834">l</span> - Edu. Cloud </span>
       </div>
